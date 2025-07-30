@@ -6,104 +6,111 @@
   <title>Samuel Khumbula – Academic & Trading Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #1a002b;
+      background: linear-gradient(180deg, #1a002b 0%, #2e003e 100%);
       color: #eee;
     }
-
     header {
-      background-color: #2e003e;
-      color: #fff;
-      padding: 3rem 1rem;
+      background: #2e003e;
+      padding: 3rem 2rem;
       text-align: center;
     }
-
     header h1 {
+      font-size: 3rem;
       margin: 0;
-      font-size: 2.5rem;
+      color: #d4bfff;
     }
-
     header p {
       margin-top: 1rem;
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      font-size: 1.2rem;
+      max-width: 900px;
+      margin-inline: auto;
+      line-height: 1.6;
+      color: #e0c5ff;
     }
-
     main {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
     }
-
     details {
       margin-bottom: 1.5rem;
-      background-color: #330049;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      background-color: #3c005c;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
       overflow: hidden;
+      transition: transform 0.2s;
     }
-
+    details:hover {
+      transform: translateY(-2px);
+    }
     summary {
-      padding: 1rem 1.5rem;
+      padding: 1.25rem 2rem;
       font-weight: 600;
-      font-size: 1.1rem;
-      background-color: #4b0072;
-      cursor: pointer;
+      font-size: 1.2rem;
+      background-color: #520080;
       color: #fff;
+      cursor: pointer;
     }
-
     summary:hover {
-      background-color: #5f0099;
+      background-color: #6a00a3;
     }
-
     details[open] summary {
       border-bottom: 1px solid #888;
     }
-
     .content {
-      padding: 1rem 1.5rem;
+      padding: 1.5rem 2rem;
+      background: #2c0045;
+      color: #f0e6ff;
     }
-
     ul {
+      list-style-type: square;
       padding-left: 1.5rem;
     }
-
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: #aaa;
+      color: #c5aaff;
     }
-
     a {
-      color: #a070ff;
+      color: #d4bfff;
       text-decoration: none;
     }
-
     a:hover {
       text-decoration: underline;
     }
-
     .status {
       font-size: 0.85rem;
-      padding: 0.2rem 0.6rem;
+      padding: 0.3rem 0.7rem;
       border-radius: 5px;
       margin-left: 8px;
       vertical-align: middle;
     }
-
     .completed {
-      background-color: #d4edda;
-      color: #155724;
+      background-color: #b0f0c8;
+      color: #003e1f;
     }
-
     .in-progress {
-      background-color: #d1ecf1;
-      color: #0c5460;
+      background-color: #c0ecf5;
+      color: #003747;
+    }
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p, summary, .content {
+        font-size: 1rem;
+      }
+      .content {
+        padding: 1rem;
+      }
     }
   </style>
 </head>
@@ -111,7 +118,7 @@
 
 <header>
   <h1>Samuel Khumbula</h1>
-  <p style="text-align: left;">
+  <p>
     Welcome to my academic and technical portfolio. I hold a Bachelor's degree in Physics with a minor in Chemistry and am currently pursuing a PhD in Physics. With a deep love for mathematics and research experience in nuclear physics using Monte Carlo simulations, I’ve developed a strong interest in building autonomous systems. In my spare time, I design algorithmic trading strategies that combine AI, logic, and conditional frameworks to operate independently and adapt to real-world markets.
   </p>
 </header>
@@ -128,14 +135,8 @@
     <summary>🎓 Education</summary>
     <div class="content">
       <ul>
-        <li>
-          PhD in Physics, University of New Hampshire
-          <span class="status in-progress">In Progress</span>
-        </li>
-        <li>
-          Bachelor of Science in Physics, Minor in Chemistry, Keene State College
-          <span class="status completed">Completed</span>
-        </li>
+        <li>PhD in Physics, University of New Hampshire <span class="status in-progress">In Progress</span></li>
+        <li>Bachelor of Science in Physics, Minor in Chemistry, Keene State College <span class="status completed">Completed</span></li>
       </ul>
     </div>
   </details>
@@ -186,9 +187,7 @@
     <summary>📚 PhD Coursework</summary>
     <div class="content">
       <strong>Completed:</strong>
-      <ul>
-        <li>Completed classes will appear here</li>
-      </ul>
+      <ul><li>Completed classes will appear here</li></ul>
       <strong>In Progress:</strong>
       <ul>
         <li>Quantum Field Theory I</li>
@@ -201,38 +200,14 @@
   <details>
     <summary>📘 Undergraduate Coursework by Semester (Fall 2021 - Spring 2025)</summary>
     <div class="content">
-      <ul><strong>Fall 2021</strong>
-        <li>Intro to Nuclear Physics</li>
-        <li>Linear Algebra</li>
-      </ul>
-      <ul><strong>Spring 2022</strong>
-        <li>Thermodynamics and Kinetics</li>
-        <li>Intro to Differential Equations</li>
-      </ul>
-      <ul><strong>Fall 2022</strong>
-        <li>Organic Chemistry I</li>
-        <li>Mathematical Methods for Physicists</li>
-      </ul>
-      <ul><strong>Spring 2023</strong>
-        <li>Quantum Chemistry</li>
-        <li>Probability and Statistics</li>
-      </ul>
-      <ul><strong>Fall 2023</strong>
-        <li>Classical Mechanics</li>
-        <li>Computational Chemistry</li>
-      </ul>
-      <ul><strong>Spring 2024</strong>
-        <li>Advanced Lab / Capstone Preparation</li>
-        <li>Scientific Computing</li>
-      </ul>
-      <ul><strong>Fall 2024</strong>
-        <li>Capstone Seminar</li>
-        <li>Statistical Mechanics</li>
-      </ul>
-      <ul><strong>Spring 2025</strong>
-        <li>Senior Thesis Presentation</li>
-        <li>Electives / Internship</li>
-      </ul>
+      <ul><strong>Fall 2021</strong><li>Intro to Nuclear Physics</li><li>Linear Algebra</li></ul>
+      <ul><strong>Spring 2022</strong><li>Thermodynamics and Kinetics</li><li>Intro to Differential Equations</li></ul>
+      <ul><strong>Fall 2022</strong><li>Organic Chemistry I</li><li>Mathematical Methods for Physicists</li></ul>
+      <ul><strong>Spring 2023</strong><li>Quantum Chemistry</li><li>Probability and Statistics</li></ul>
+      <ul><strong>Fall 2023</strong><li>Classical Mechanics</li><li>Computational Chemistry</li></ul>
+      <ul><strong>Spring 2024</strong><li>Advanced Lab / Capstone Preparation</li><li>Scientific Computing</li></ul>
+      <ul><strong>Fall 2024</strong><li>Capstone Seminar</li><li>Statistical Mechanics</li></ul>
+      <ul><strong>Spring 2025</strong><li>Senior Thesis Presentation</li><li>Electives / Internship</li></ul>
     </div>
   </details>
 
