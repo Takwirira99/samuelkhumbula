@@ -17,7 +17,7 @@
     }
     header {
   background: #2e003e;
-  padding: 3rem 2rem;
+  padding: padding: 2rem 2rem 1rem 2rem; /* reduce bottom padding */
   text-align: center;
   position: sticky;
   top: 0;
@@ -31,16 +31,16 @@ header h1 {
 }
 
 
-    header p {
-  margin-top: 0.5rem; /* reduced from 1rem */
+   header p {
+  margin-top: 0.5rem;
+  margin-bottom: 0; /* remove bottom margin */
   font-size: 1.1rem;
-  max-width: 1100px; /* wider than before */
+  max-width: 1100px;
   margin-inline: auto;
-  line-height: 1.4; /* tighter line height */
-  text-align: left; /* keep left aligned */
-  padding: 0 1rem; /* some horizontal padding */
+  line-height: 1.4;
+  text-align: left;
+  padding: 0 1rem;
 }
-
     main {
       width: 100%;
       max-width: 1400px;
