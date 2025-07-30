@@ -86,6 +86,24 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .status {
+      font-size: 0.85rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 5px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .completed {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .in-progress {
+      background-color: #d1ecf1;
+      color: #0c5460;
+    }
   </style>
 </head>
 <body>
@@ -105,14 +123,17 @@
   </details>
 
   <details>
-    <summary>🎓 PhD in Physics</summary>
+    <summary>🎓 Education</summary>
     <div class="content">
       <ul>
-        <li>Institution: [Your University]</li>
-        <li>Year: 1st year (expected completion: [Your Year])</li>
-        <li>Research Interest: Nuclear Physics, Applied Modeling</li>
-        <li>Minor: Chemistry (during undergraduate studies)</li>
-        <li>TA for PHYS 407 (General Physics I – Lab & Lecture)</li>
+        <li>
+          PhD in Physics, [Your University]
+          <span class="status in-progress">In Progress</span>
+        </li>
+        <li>
+          Bachelor of Science in Physics, Minor in Chemistry, [Your Undergrad Institution]
+          <span class="status completed">Completed</span>
+        </li>
       </ul>
     </div>
   </details>
