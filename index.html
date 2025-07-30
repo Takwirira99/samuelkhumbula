@@ -3,56 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Educational Progress – [Your Name]</title>
+  <title>[Your Name] – Academic & Trading Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
+      background-color: #f4f6f8;
       color: #333;
-      line-height: 1.6;
     }
+
     header {
       background-color: #0a192f;
       color: #fff;
-      padding: 2rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
+
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
+
     header p {
-      margin-top: 0.5rem;
-      font-size: 1rem;
+      margin-top: 1rem;
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    section {
+
+    main {
       max-width: 800px;
       margin: 2rem auto;
-      padding: 1rem 2rem;
+      padding: 0 1rem;
+    }
+
+    details {
+      margin-bottom: 1.5rem;
       background-color: #fff;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
     }
-    h2 {
-      border-bottom: 2px solid #eaeaea;
-      padding-bottom: 0.5rem;
-      margin-top: 0;
+
+    summary {
+      padding: 1rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      background-color: #eaeef2;
+      cursor: pointer;
     }
+
+    summary:hover {
+      background-color: #dce3e9;
+    }
+
+    details[open] summary {
+      border-bottom: 1px solid #ccc;
+    }
+
+    .content {
+      padding: 1rem 1.5rem;
+    }
+
     ul {
-      padding-left: 1.2rem;
+      padding-left: 1.5rem;
     }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
       font-size: 0.9rem;
       color: #777;
     }
+
     a {
       color: #0a66c2;
       text-decoration: none;
     }
+
     a:hover {
       text-decoration: underline;
     }
@@ -62,79 +92,100 @@
 
 <header>
   <h1>[Your Full Name]</h1>
-  <p>PhD Physics Student | Quant Developer | Trading Strategist</p>
+  <p>Welcome to my academic and technical portfolio. I'm a Physics PhD student with a chemistry minor, a passion for mathematics and nuclear physics research, and an algorithmic trader who codes for profit in my spare time.</p>
 </header>
 
-<section>
-  <h2>📌 Overview</h2>
-  <p>Welcome to my academic and technical portfolio. This page summarizes my educational milestones, current research, trading bot development, and teaching roles. For detailed experience, see my <a href="[Your LinkedIn URL]" target="_blank">LinkedIn</a> or <a href="[Your GitHub URL]" target="_blank">GitHub</a>.</p>
-</section>
+<main>
 
-<section>
-  <h2>🎓 PhD in Physics</h2>
-  <ul>
-    <li>Institution: [University Name]</li>
-    <li>Year: 1st year (expected completion: [Year])</li>
-    <li>Focus: Modeling, statistics, stochastic systems, classical mechanics</li>
-    <li>TA for PHYS 407 (General Physics I – Lab & Lecture)</li>
-  </ul>
-</section>
+  <details>
+    <summary>📌 Overview</summary>
+    <div class="content">
+      <p>This site highlights my academic progress, trading work, and technical capabilities. I'm currently pursuing a PhD in Physics and independently develop trading models using live market data.</p>
+    </div>
+  </details>
 
-<section>
-  <h2>🤖 Trading Bot Project</h2>
-  <ul>
-    <li>Autonomous crypto trading bot built using Kraken API</li>
-    <li>Live trading with real capital, generating consistent profits</li>
-    <li>Tech Stack: Python, TensorFlow (LSTM), Firebase, `ta`, pandas, NumPy</li>
-    <li>Functions: real-time data ingestion, feature extraction, prediction, execution, risk control</li>
-  </ul>
-</section>
-
-<section>
-  <h2>👨‍🏫 Teaching Experience</h2>
-  <ul>
-    <li>PHYS 407 Lab Instructor & Course Support TA</li>
-    <li>Responsibilities:
+  <details>
+    <summary>🎓 PhD in Physics</summary>
+    <div class="content">
       <ul>
-        <li>Running labs & mini-lectures</li>
-        <li>Grading, exam proctoring, office hours</li>
-        <li>Student support in mechanics and problem-solving</li>
+        <li>Institution: [Your University]</li>
+        <li>Year: 1st year (expected completion: [Your Year])</li>
+        <li>Research Interest: Nuclear Physics, Applied Modeling</li>
+        <li>Minor: Chemistry (during undergraduate studies)</li>
+        <li>TA for PHYS 407 (General Physics I – Lab & Lecture)</li>
       </ul>
-    </li>
-  </ul>
-</section>
+    </div>
+  </details>
 
-<section>
-  <h2>🧠 Technical Skills</h2>
-  <ul>
-    <li>Python, C++, pandas, NumPy, TensorFlow, scikit-learn</li>
-    <li>APIs: Kraken, Firebase</li>
-    <li>Data: real-time pipelines, time series modeling, LSTM networks</li>
-    <li>Tools: Git, Jupyter, VS Code, Linux, Firestore</li>
-  </ul>
-</section>
+  <details>
+    <summary>🤖 Trading Bot Project</summary>
+    <div class="content">
+      <ul>
+        <li>Fully autonomous crypto bot built on the Kraken API</li>
+        <li>Executes trades, manages portfolio, and tracks profits in real time</li>
+        <li>Implemented using: Python, TensorFlow (LSTM), pandas, NumPy, Firebase, `ta`, `krakenex`</li>
+        <li>System runs continuously, using statistical models and live data feeds</li>
+        <li>Consistently profitable; developed and maintained independently</li>
+      </ul>
+    </div>
+  </details>
 
-<section>
-  <h2>📚 Selected Coursework</h2>
-  <ul>
-    <li>Stochastic Processes & Statistical Mechanics</li>
-    <li>Optimization & Numerical Methods</li>
-    <li>Machine Learning & Signal Processing</li>
-    <li>Quantum Mechanics I, Electrodynamics</li>
-  </ul>
-</section>
+  <details>
+    <summary>👨‍🏫 Teaching Experience</summary>
+    <div class="content">
+      <ul>
+        <li>PHYS 407 Lab Instructor & Lecture Support TA</li>
+        <li>Responsibilities include:
+          <ul>
+            <li>Leading lab sessions and giving mini-lectures</li>
+            <li>Grading lab reports, exams, and holding office hours</li>
+            <li>Assisting students with mechanics, motion, energy, and oscillations</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </details>
 
-<section>
-  <h2>📬 Contact</h2>
-  <ul>
-    <li>Email: [your.email@example.com]</li>
-    <li>GitHub: <a href="[Your GitHub URL]" target="_blank">[github.com/yourhandle]</a></li>
-    <li>LinkedIn: <a href="[Your LinkedIn URL]" target="_blank">[linkedin.com/in/yourname]</a></li>
-  </ul>
-</section>
+  <details>
+    <summary>🧠 Technical Skills</summary>
+    <div class="content">
+      <ul>
+        <li>Languages: Python, C++</li>
+        <li>Libraries: pandas, NumPy, TensorFlow, scikit-learn</li>
+        <li>APIs: Kraken, Firebase</li>
+        <li>Data: Time series modeling, technical indicators, LSTM networks</li>
+        <li>Tools: Git, Firestore, Jupyter, VS Code, Linux</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>📚 Selected Coursework</summary>
+    <div class="content">
+      <ul>
+        <li>Stochastic Processes & Statistical Mechanics</li>
+        <li>Optimization & Numerical Methods</li>
+        <li>Quantum Mechanics I, Electrodynamics</li>
+        <li>Machine Learning & Signal Processing</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>📬 Contact</summary>
+    <div class="content">
+      <ul>
+        <li>Email: [your.email@example.com]</li>
+        <li>GitHub: <a href="[Your GitHub URL]" target="_blank">github.com/yourhandle</a></li>
+        <li>LinkedIn: <a href="[Your LinkedIn URL]" target="_blank">linkedin.com/in/yourname</a></li>
+      </ul>
+    </div>
+  </details>
+
+</main>
 
 <footer>
-  &copy; 2025 [Your Name]. All rights reserved.
+  &copy; 2025 [Your Name]. Built for academic & professional transparency.
 </footer>
 
 </body>
