@@ -194,7 +194,12 @@ header h1 {
   <div class="section-summary" data-project="sentiment-ai">🧠 Sentiment AI</div>
 </div>
 
-  <div class="section-summary" data-section="teaching">👨‍🏫 Teaching Experience</div>
+  <div class="section-summary" id="teaching-toggle">👨‍🏫 Teaching Experience</div>
+<div id="teaching-list" style="display: none; padding-left: 2rem; margin-bottom: 1.5rem;">
+  <div class="section-summary" data-teaching="graduate">🎓 Graduate Teaching</div>
+  <div class="section-summary" data-teaching="undergraduate">📚 Undergraduate Teaching</div>
+</div>
+
   <div class="section-summary" id="internships-toggle">💼 Previous Research/Internships</div>
 <div id="internships-list" style="display: none; padding-left: 2rem; margin-bottom: 1.5rem;">
   <div class="section-summary" data-internship="chemistry-inbre">🧪 Physical Chemistry – NH-INBRE</div>
@@ -429,6 +434,25 @@ header h1 {
 <script>
   const internshipsToggle = document.getElementById('internships-toggle');
   const internshipsList = document.getElementById('internships-list');
+const teachingToggle = document.getElementById('teaching-toggle');
+const teachingList = document.getElementById('teaching-list');
+
+teachingToggle.addEventListener('click', () => {
+  teachingList.style.display = teachingList.style.display === 'none' ? 'block' : 'none';
+});
+
+// Teaching sub-item click handlers
+document.querySelectorAll('[data-teaching]').forEach(el => {
+  el.addEventListener('click', () => {
+    const key = el.getAttribute('data-teaching');
+    if (key && teachingDetails[key]) {
+      overlayContent.innerHTML = `<h2 id="overlay-title">${teachingDetails[key].title}</h2>${teachingDetails[key].html}`;
+      overlay.classList.add('show');
+      overlay.focus();
+      teachingList.style.display = 'none'; // hide list when detail opens
+    }
+  });
+});
 
   // Toggle dropdown
   internshipsToggle.addEventListener('click', () => {
@@ -458,6 +482,36 @@ header h1 {
         </ul>`
     }
   };
+const teachingDetails = {
+  graduate: {
+    title: '🎓 Graduate Teaching Experience',
+    html: `
+      <ul>
+        <li><strong>Graduate TA – PHYS 900: Advanced Physics Lab</strong></li>
+        <li>Supervised advanced experiments and guided graduate students in experimental physics techniques.</li>
+        <li>Held weekly seminars and provided detailed feedback on lab reports and presentations.</li>
+      </ul>
+    `
+  },
+  undergraduate: {
+    title: '📚 Undergraduate Teaching Experience',
+    html: `
+      <ul>
+        <li><strong>Teaching Assistant – PHYS 407: General Physics I</strong></li>
+        <li>Serve as lab instructor and lecture course support for a calculus-based physics course focused on motion, forces, energy, momentum, and oscillations</li>
+        <li>Key responsibilities:
+          <ul>
+            <li>Lead weekly lab sessions, beginning with concise concept overviews that connect lecture material to hands-on experiments</li>
+            <li>Guide students through experimental setups, fostering confidence with lab equipment and scientific reasoning</li>
+            <li>Hold regular office hours and provide responsive, individualized academic support</li>
+            <li>Grade lab reports and exams with an emphasis on fairness, consistency, and constructive feedback</li>
+            <li>Collaborate with the lead instructor to align lab activities with lecture goals and adapt instruction to student needs</li>
+          </ul>
+        </li>
+      </ul>
+    `
+  }
+};
 
   // Internship click handlers
   document.querySelectorAll('[data-internship]').forEach(el => {
