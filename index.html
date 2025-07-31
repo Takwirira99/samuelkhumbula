@@ -17,54 +17,44 @@
     }
     header {
   background: #2e003e;
-  padding: 1.2rem 2rem;
+  padding: 1.5rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
   backdrop-filter: saturate(180%) blur(10px);
+  text-align: center;
 }
 
-.header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  text-align: left;
-}
-
-.header-flex h1 {
-  flex: 1 0 250px;
+header h1 {
   font-size: 2.8rem;
-  margin: 0;
+  margin: 0 0 1rem 0;
   color: #fff;
-  white-space: nowrap;
 }
 
-.header-flex p {
-  flex: 2 1 600px;
-  margin: 0;
+.intro-container {
+  max-width: 1000px;
+  margin: 0 auto;
   font-size: 1.05rem;
   line-height: 1.5;
   color: #eee;
+  text-align: justify;
+  padding: 0 1rem;
 }
 
-/* Mobile responsiveness */
+/* Optional: limit paragraph height visually (remove if not needed) */
+.intro-container p {
+  margin: 0;
+}
+
+/* Mobile styles */
 @media (max-width: 768px) {
-  .header-flex {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header-flex h1 {
+  header h1 {
     font-size: 2rem;
-    white-space: normal;
   }
 
-  .header-flex p {
+  .intro-container {
     font-size: 1rem;
+    text-align: left;
   }
 }
 
@@ -177,13 +167,14 @@
 <body>
 
 <header>
-  <div class="header-flex">
-    <h1>Samuel Khumbula</h1>
+  <h1>Samuel Khumbula</h1>
+  <div class="intro-container">
     <p>
       Welcome to my academic and technical portfolio. I hold a Bachelor's degree in Physics with a minor in Mathematics and am currently pursuing a PhD in Physics. With a deep love for Mathematics and research experience in nuclear physics using Monte Carlo simulations, I’ve developed a strong interest in building autonomous systems. In my spare time, I design algorithmic trading strategies that combine AI, logic, and conditional frameworks to operate independently and adapt to real-world markets.
     </p>
   </div>
 </header>
+
 
 
 <main>
