@@ -157,7 +157,14 @@
 <main>
   <div class="section-summary" data-section="overview">📌 Overview</div>
   <div class="section-summary" data-section="education">🎓 Education</div>
-  <div class="section-summary" data-section="trading">🤖 Trading Bot Project</div>
+  <div class="section-summary" id="projects-toggle">💼 Projects</div>
+<div id="projects-list" style="display: none; padding-left: 2rem; margin-bottom: 1.5rem;">
+  <div class="section-summary" data-project="ai-bot">🤖 AI Trading Bot</div>
+  <div class="section-summary" data-project="quant-dashboard">📊 Quant Dashboard</div>
+  <div class="section-summary" data-project="market-scraper">🔍 Market Scraper</div>
+  <div class="section-summary" data-project="sentiment-ai">🧠 Sentiment AI</div>
+</div>
+
   <div class="section-summary" data-section="teaching">👨‍🏫 Teaching Experience</div>
   <div class="section-summary" data-section="internships">💼 Internships</div>
   <div class="section-summary" data-section="skills">🧠 Technical Skills</div>
@@ -321,6 +328,68 @@
     if (e.key === 'Escape' && overlay.classList.contains('show')) {
       overlay.classList.remove('show');
     }
+  });
+</script>
+<script>
+  const projectsToggle = document.getElementById('projects-toggle');
+  const projectsList = document.getElementById('projects-list');
+
+  // Toggle dropdown
+  projectsToggle.addEventListener('click', () => {
+    projectsList.style.display = projectsList.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Fake project content
+  const projectDetails = {
+    'ai-bot': {
+      title: '🤖 AI Trading Bot',
+      html: `
+        <ul>
+          <li>Built on Kraken API and Python</li>
+          <li>Real-time data ingestion and LSTM-based prediction</li>
+          <li>Portfolio management, order execution, logging</li>
+        </ul>`
+    },
+    'quant-dashboard': {
+      title: '📊 Quant Dashboard',
+      html: `
+        <ul>
+          <li>Interactive dashboard for backtests and live performance</li>
+          <li>Charts powered by D3.js and Plotly</li>
+          <li>Secure backend with Flask and JWT auth</li>
+        </ul>`
+    },
+    'market-scraper': {
+      title: '🔍 Market Scraper',
+      html: `
+        <ul>
+          <li>Scrapes data from major crypto exchanges</li>
+          <li>Normalized, enriched, and stored in Firebase</li>
+          <li>Used in training pipelines for prediction models</li>
+        </ul>`
+    },
+    'sentiment-ai': {
+      title: '🧠 Sentiment AI',
+      html: `
+        <ul>
+          <li>Analyzes Reddit and Twitter sentiment</li>
+          <li>Feeds into market decision logic</li>
+          <li>Trained on labeled finance data using transformers</li>
+        </ul>`
+    }
+  };
+
+  // Project click handlers
+  document.querySelectorAll('[data-project]').forEach(el => {
+    el.addEventListener('click', () => {
+      const key = el.getAttribute('data-project');
+      if (key && projectDetails[key]) {
+        overlayContent.innerHTML = `<h2 id="overlay-title">${projectDetails[key].title}</h2>${projectDetails[key].html}`;
+        overlay.classList.add('show');
+        overlay.focus();
+        projectsList.style.display = 'none'; // hide list when a project opens
+      }
+    });
   });
 </script>
 
