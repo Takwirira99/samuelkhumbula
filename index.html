@@ -17,49 +17,51 @@
     }
    header {
   background: #2e003e;
-  padding: 0.5rem 1rem; /* Minimal vertical padding */
+  padding: 0;
+  margin: 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   backdrop-filter: saturate(180%) blur(10px);
-  text-align: center;
   color: #fff;
-  margin: 0;
+  text-align: center;
 }
 
 header h1 {
-  font-size: 2.8rem;
-  margin: 0; /* No space above or below the name */
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 0.5rem 0 0 0; /* small breathing room at the top */
   color: #fff;
-  padding-top: 0.5rem; /* Optional: slight breathing room */
 }
 
 .intro-container {
   width: 100%;
-  padding: 0.5rem 2rem 0 2rem; /* Reduce vertical padding */
-  font-size: 1.05rem;
-  line-height: 1.5;
-  text-align: justify;
-  color: #eee;
+  padding: 0 1rem;
   margin: 0;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: #eee;
+  text-align: justify;
 }
 
 .intro-container p {
-  margin: 0; /* Remove paragraph spacing */
+  margin: 0;
+  padding: 0.25rem 0 0.25rem 0;
 }
 
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .intro-container {
-    font-size: 1rem;
-    padding: 0.5rem 1rem 0 1rem;
+    font-size: 0.95rem;
+    padding: 0 0.75rem;
     text-align: left;
   }
 }
+
 
 
     main {
