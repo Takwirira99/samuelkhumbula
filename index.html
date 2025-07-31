@@ -16,65 +16,29 @@
       color: #eee;
     }
     header {
-  background: #2e003e;
-  padding: padding: 2rem 2rem 1rem 2rem; /* reduce bottom padding */
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: saturate(180%) blur(10px);
-}
-header h1 {
-  font-size: 3rem;
-  margin: 0;
-  color: #ffffff;
-}
-
-#about-me-overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: #1a002b;
-  color: #eee;
-  padding: 3rem 4rem;
-  overflow-y: auto;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-}
-
-#about-me-content {
-  max-width: 900px;
-  margin: auto;
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-#about-me-back {
-  align-self: flex-start;
-  font-size: 1.5rem;
-  background: transparent;
-  border: none;
-  color: #d4bfff;
-  cursor: pointer;
-  margin-bottom: 2rem;
-  padding: 0;
-}
-
-#about-me-back:hover {
-  color: #fff;
-}
-
-
-   header p {
-  margin-top: 0.5rem;
-  margin-bottom: 0; /* remove bottom margin */
-  font-size: 1.1rem;
-  max-width: 1100px;
-  margin-inline: auto;
-  line-height: 1.4;
-  text-align: left;
-  padding: 0 1rem;
-}
+      background: #2e003e;
+      padding: 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: saturate(180%) blur(10px);
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: #ffffff;
+    }
+    header p {
+      margin-top: 0.5rem;
+      margin-bottom: 0;
+      font-size: 1.1rem;
+      max-width: 1100px;
+      margin-inline: auto;
+      line-height: 1.4;
+      text-align: left;
+      padding: 0 1rem;
+    }
     main {
       width: 100%;
       max-width: 1400px;
@@ -154,6 +118,42 @@ header h1 {
         padding: 1rem;
       }
     }
+
+    /* About Me Overlay */
+    #about-me-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #1a002b;
+      color: #eee;
+      padding: 3rem 4rem;
+      overflow-y: auto;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      display: none; /* initially hidden */
+    }
+    #about-me-overlay.show {
+      display: flex;
+    }
+    #about-me-content {
+      max-width: 900px;
+      margin: auto;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    #about-me-back {
+      align-self: flex-start;
+      font-size: 1.5rem;
+      background: transparent;
+      border: none;
+      color: #d4bfff;
+      cursor: pointer;
+      margin-bottom: 2rem;
+      padding: 0;
+    }
+    #about-me-back:hover {
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -173,29 +173,6 @@ header h1 {
     </div>
   </details>
 
-<details id="about-me-details">
-  <summary style="cursor:pointer;">👤 About Me</summary>
-</details>
-
-<div id="about-me-overlay" role="dialog" aria-modal="true" aria-labelledby="about-me-title" hidden>
-  <button id="about-me-close" aria-label="Close About Me">&times;</button>
-  <div id="about-me-content">
-    <h2 id="about-me-title">About Samuel Khumbula</h2>
-    <p>
-      From an early age, Samuel was captivated by the mysteries of the physical world, sparking a lifelong passion for science and discovery. His academic journey led him through rigorous studies in physics and chemistry, culminating in his current pursuit of a PhD focused on nuclear physics simulations. Alongside his academic career, Samuel has cultivated a strong interest in autonomous trading systems, blending his expertise in mathematics, programming, and finance. Driven by curiosity and innovation, he strives to push the boundaries of both science and technology.
-    </p>
-    <p>
-      Outside the lab and market, Samuel enjoys mentoring students, collaborating on interdisciplinary projects, and exploring emerging trends in AI and quantitative finance. His story is one of continuous learning and ambition, fueled by a desire to contribute meaningful advancements in research and technology.
-    </p>
-    <details id="about-me-details">
-  <summary style="cursor:pointer;">👤 About Me</summary>
-</details>
-
-  </div>
-</div>
-
-
-  
   <details>
     <summary>🎓 Education</summary>
     <div class="content">
@@ -236,28 +213,26 @@ header h1 {
   </details>
 
   <details>
-  <summary>💼 Internships</summary>
-  <div class="content">
-    <ul>
-      <li><strong>Summer 2023 – Research Intern, National Lab XYZ</strong>
-        <ul>
-          <li>Conducted nuclear physics simulations using Monte Carlo methods</li>
-          <li>Assisted in data analysis and visualization using Python</li>
-          <li>Collaborated with senior researchers on experiment design</li>
-        </ul>
-      </li>
-      <li><strong>Summer 2022 – Software Engineering Intern, TechCorp</strong>
-        <ul>
-          <li>Developed backend APIs in Python and Flask</li>
-          <li>Implemented unit testing and documentation</li>
-          <li>Participated in agile team meetings and code reviews</li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</details>
-
-  
+    <summary>💼 Internships</summary>
+    <div class="content">
+      <ul>
+        <li><strong>Summer 2023 – Research Intern, National Lab XYZ</strong>
+          <ul>
+            <li>Conducted nuclear physics simulations using Monte Carlo methods</li>
+            <li>Assisted in data analysis and visualization using Python</li>
+            <li>Collaborated with senior researchers on experiment design</li>
+          </ul>
+        </li>
+        <li><strong>Summer 2022 – Software Engineering Intern, TechCorp</strong>
+          <ul>
+            <li>Developed backend APIs in Python and Flask</li>
+            <li>Implemented unit testing and documentation</li>
+            <li>Participated in agile team meetings and code reviews</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </details>
 
   <details>
     <summary>🧠 Technical Skills</summary>
@@ -300,71 +275,64 @@ header h1 {
     </div>
   </details>
 
+  <!-- ABOUT ME moved to last before contact -->
+  <details id="about-me-details">
+    <summary style="cursor:pointer;">👤 About Me</summary>
+  </details>
+
   <details>
     <summary>📬 Contact</summary>
     <div class="content">
       <ul>
         <li>Email: takwirira@proton.me</li>
-        <li>GitHub: <a href="[Your GitHub URL]" target="_blank">github.com/yourhandle</a></li>
-        <li>LinkedIn: <a href="[Your LinkedIn URL]" target="_blank">linkedin.com/in/yourname</a></li>
+        <li>GitHub: <a href="[Your GitHub URL]" target="_blank" rel="noopener noreferrer">github.com/yourhandle</a></li>
+        <li>LinkedIn: <a href="[Your LinkedIn URL]" target="_blank" rel="noopener noreferrer">linkedin.com/in/yourname</a></li>
       </ul>
     </div>
   </details>
 </main>
 
-<footer>
-  &copy; 2025 Samuel Khumbula. Built for academic & professional transparency.
-</footer>
+<!-- About Me Overlay -->
+<div id="about-me-overlay" role="dialog" aria-modal="true" aria-labelledby="about-me-title" tabindex="-1">
+  <button id="about-me-back" aria-label="Back to main content">← Back</button>
+  <div id="about-me-content">
+    <h2 id="about-me-title">About Samuel Khumbula</h2>
+    <p>
+      From an early age, Samuel was captivated by the mysteries of the physical world, sparking a lifelong passion for science and discovery. His academic journey led him through rigorous studies in physics and chemistry, culminating in his current pursuit of a PhD focused on nuclear physics simulations. Alongside his academic work, Samuel cultivates a deep interest in algorithmic trading, merging quantitative methods with programming to create autonomous trading bots that adapt and learn from market data. His work reflects a blend of analytical rigor, creativity, and a drive to build intelligent systems that operate independently in complex environments.
+    </p>
+    <p>
+      When not immersed in research or trading, Samuel enjoys hiking, reading scientific literature, and exploring new technologies that push the boundaries of automation and AI.
+    </p>
+  </div>
+</div>
+
+<script>
+  // About Me Overlay Toggle
+  const aboutMeDetails = document.getElementById('about-me-details');
+  const overlay = document.getElementById('about-me-overlay');
+  const backBtn = document.getElementById('about-me-back');
+
+  aboutMeDetails.addEventListener('click', e => {
+    // Prevent default toggle to avoid details open/close effect
+    e.preventDefault();
+    overlay.classList.add('show');
+    // Focus the overlay for accessibility
+    overlay.focus();
+  });
+
+  backBtn.addEventListener('click', () => {
+    overlay.classList.remove('show');
+  });
+
+  // Optional: Close overlay on ESC key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && overlay.classList.contains('show')) {
+      overlay.classList.remove('show');
+      // Move focus back to About Me summary
+      aboutMeDetails.focus();
+    }
+  });
+</script>
 
 </body>
-  <script>
-  const aboutDetails = document.getElementById('about-me-details');
-  const aboutOverlay = document.getElementById('about-me-overlay');
-  const aboutClose = document.getElementById('about-me-close');
-
-  aboutDetails.querySelector('summary').addEventListener('click', e => {
-    e.preventDefault();
-    aboutOverlay.hidden = false;
-    document.body.style.overflow = 'hidden';
-  });
-
-  aboutClose.addEventListener('click', () => {
-    aboutOverlay.hidden = true;
-    document.body.style.overflow = '';
-    // Close the details so summary resets
-    aboutDetails.removeAttribute('open');
-  });
-
-  // Close on ESC key
-  window.addEventListener('keydown', (e) => {
-    if (!aboutOverlay.hidden && e.key === 'Escape') {
-      aboutClose.click();
-    }
-  });
-    <script>
-  const aboutDetails = document.getElementById('about-me-details');
-  const aboutOverlay = document.getElementById('about-me-overlay');
-  const aboutBack = document.getElementById('about-me-back');
-
-  aboutDetails.querySelector('summary').addEventListener('click', e => {
-    e.preventDefault();
-    aboutOverlay.hidden = false;
-    document.body.style.overflow = 'hidden';
-  });
-
-  aboutBack.addEventListener('click', () => {
-    aboutOverlay.hidden = true;
-    document.body.style.overflow = '';
-    aboutDetails.removeAttribute('open');
-  });
-
-  window.addEventListener('keydown', (e) => {
-    if (!aboutOverlay.hidden && e.key === 'Escape') {
-      aboutBack.click();
-    }
-  });
-</script>
-
-</script>
-
 </html>
