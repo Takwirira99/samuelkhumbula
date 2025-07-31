@@ -15,14 +15,15 @@
       background: linear-gradient(180deg, #1a002b 0%, #2e003e 100%);
       color: #eee;
     }
-    header {
+   header {
   background: #2e003e;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
   backdrop-filter: saturate(180%) blur(10px);
   text-align: center;
+  color: #fff;
 }
 
 header h1 {
@@ -32,18 +33,12 @@ header h1 {
 }
 
 .intro-container {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
   font-size: 1.05rem;
   line-height: 1.5;
-  color: #eee;
   text-align: justify;
-  padding: 0 1rem;
-}
-
-/* Optional: limit paragraph height visually (remove if not needed) */
-.intro-container p {
-  margin: 0;
+  color: #eee;
 }
 
 /* Mobile styles */
@@ -54,9 +49,11 @@ header h1 {
 
   .intro-container {
     font-size: 1rem;
+    padding: 0 1rem;
     text-align: left;
   }
 }
+
 
     main {
       width: 100%;
