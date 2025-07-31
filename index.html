@@ -17,7 +17,7 @@
     }
    header {
   background: #2e003e;
-  padding: 1.5rem 1rem 0.5rem 1rem; /* Reduce bottom padding */
+  padding: 0.5rem 1rem; /* Minimal vertical padding */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -29,13 +29,14 @@
 
 header h1 {
   font-size: 2.8rem;
-  margin: 0 0 0.5rem 0; /* Tight bottom spacing under name */
+  margin: 0; /* No space above or below the name */
   color: #fff;
+  padding-top: 0.5rem; /* Optional: slight breathing room */
 }
 
 .intro-container {
   width: 100%;
-  padding: 0 2rem;
+  padding: 0.5rem 2rem 0 2rem; /* Reduce vertical padding */
   font-size: 1.05rem;
   line-height: 1.5;
   text-align: justify;
@@ -44,7 +45,7 @@ header h1 {
 }
 
 .intro-container p {
-  margin: 0; /* Removes extra space below the paragraph */
+  margin: 0; /* Remove paragraph spacing */
 }
 
 /* Mobile responsiveness */
@@ -55,7 +56,7 @@ header h1 {
 
   .intro-container {
     font-size: 1rem;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem 0 1rem;
     text-align: left;
   }
 }
