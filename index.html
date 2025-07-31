@@ -30,6 +30,40 @@ header h1 {
   color: #ffffff;
 }
 
+#about-me-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #1a002b;
+  color: #eee;
+  padding: 3rem 4rem;
+  overflow-y: auto;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+#about-me-content {
+  max-width: 900px;
+  margin: auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+#about-me-close {
+  align-self: flex-end;
+  font-size: 2.5rem;
+  background: transparent;
+  border: none;
+  color: #d4bfff;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  padding: 0;
+  line-height: 1;
+}
+
+#about-me-close:hover {
+  color: #fff;
+}
 
    header p {
   margin-top: 0.5rem;
@@ -139,6 +173,25 @@ header h1 {
     </div>
   </details>
 
+<details id="about-me-details">
+  <summary style="cursor:pointer;">👤 About Me</summary>
+</details>
+
+<div id="about-me-overlay" role="dialog" aria-modal="true" aria-labelledby="about-me-title" hidden>
+  <button id="about-me-close" aria-label="Close About Me">&times;</button>
+  <div id="about-me-content">
+    <h2 id="about-me-title">About Samuel Khumbula</h2>
+    <p>
+      From an early age, Samuel was captivated by the mysteries of the physical world, sparking a lifelong passion for science and discovery. His academic journey led him through rigorous studies in physics and chemistry, culminating in his current pursuit of a PhD focused on nuclear physics simulations. Alongside his academic career, Samuel has cultivated a strong interest in autonomous trading systems, blending his expertise in mathematics, programming, and finance. Driven by curiosity and innovation, he strives to push the boundaries of both science and technology.
+    </p>
+    <p>
+      Outside the lab and market, Samuel enjoys mentoring students, collaborating on interdisciplinary projects, and exploring emerging trends in AI and quantitative finance. His story is one of continuous learning and ambition, fueled by a desire to contribute meaningful advancements in research and technology.
+    </p>
+  </div>
+</div>
+
+
+  
   <details>
     <summary>🎓 Education</summary>
     <div class="content">
@@ -260,4 +313,30 @@ header h1 {
 </footer>
 
 </body>
+  <script>
+  const aboutDetails = document.getElementById('about-me-details');
+  const aboutOverlay = document.getElementById('about-me-overlay');
+  const aboutClose = document.getElementById('about-me-close');
+
+  aboutDetails.querySelector('summary').addEventListener('click', e => {
+    e.preventDefault();
+    aboutOverlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+  });
+
+  aboutClose.addEventListener('click', () => {
+    aboutOverlay.hidden = true;
+    document.body.style.overflow = '';
+    // Close the details so summary resets
+    aboutDetails.removeAttribute('open');
+  });
+
+  // Close on ESC key
+  window.addEventListener('keydown', (e) => {
+    if (!aboutOverlay.hidden && e.key === 'Escape') {
+      aboutClose.click();
+    }
+  });
+</script>
+
 </html>
