@@ -17,18 +17,19 @@
     }
    header {
   background: #2e003e;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem 0.5rem 1rem; /* Reduce bottom padding */
   position: sticky;
   top: 0;
   z-index: 1000;
   backdrop-filter: saturate(180%) blur(10px);
   text-align: center;
   color: #fff;
+  margin: 0;
 }
 
 header h1 {
   font-size: 2.8rem;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0; /* Tight bottom spacing under name */
   color: #fff;
 }
 
@@ -39,9 +40,14 @@ header h1 {
   line-height: 1.5;
   text-align: justify;
   color: #eee;
+  margin: 0;
 }
 
-/* Mobile styles */
+.intro-container p {
+  margin: 0; /* Removes extra space below the paragraph */
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
   header h1 {
     font-size: 2rem;
