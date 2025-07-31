@@ -166,7 +166,12 @@
 </div>
 
   <div class="section-summary" data-section="teaching">👨‍🏫 Teaching Experience</div>
-  <div class="section-summary" data-section="internships">💼 Internships</div>
+  <div class="section-summary" id="internships-toggle">💼 Internships</div>
+<div id="internships-list" style="display: none; padding-left: 2rem; margin-bottom: 1.5rem;">
+  <div class="section-summary" data-internship="chemistry-inbre">🧪 Physical Chemistry – NH-INBRE</div>
+  <div class="section-summary" data-internship="medical-upenn">🏥 Medical Physics – UPenn</div>
+</div>
+
   <div class="section-summary" data-section="skills">🧠 Technical Skills</div>
   <div class="section-summary" data-section="phd-coursework">📚 PhD Coursework</div>
   <div class="section-summary" data-section="undergrad-coursework">📘 Undergraduate Coursework (Relevant Only)</div>
@@ -388,6 +393,52 @@
         overlay.classList.add('show');
         overlay.focus();
         projectsList.style.display = 'none'; // hide list when a project opens
+      }
+    });
+  });
+</script>
+<script>
+  const internshipsToggle = document.getElementById('internships-toggle');
+  const internshipsList = document.getElementById('internships-list');
+
+  // Toggle dropdown
+  internshipsToggle.addEventListener('click', () => {
+    internshipsList.style.display = internshipsList.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Internship detail content
+  const internshipDetails = {
+    'chemistry-inbre': {
+      title: '🧪 Physical Chemistry – NH-INBRE',
+      html: `
+        <ul>
+          <li>Internship duration: Fall 2023 - Spring 2025</li>
+          <li>Performed nuclear physics simulations with Monte Carlo methods</li>
+          <li>Data visualization using Python</li>
+          <li>Collaborated with researchers on experiment setup and reporting</li>
+        </ul>`
+    },
+    'medical-upenn': {
+      title: '🏥 Medical Physics – University of Pennsylvania',
+      html: `
+        <ul>
+          <li>Internship duration: Summer 2024</li>
+          <li>Developed Python/Flask backend APIs</li>
+          <li>Wrote unit tests and contributed to project documentation</li>
+          <li>Participated in agile team practices and code reviews</li>
+        </ul>`
+    }
+  };
+
+  // Internship click handlers
+  document.querySelectorAll('[data-internship]').forEach(el => {
+    el.addEventListener('click', () => {
+      const key = el.getAttribute('data-internship');
+      if (key && internshipDetails[key]) {
+        overlayContent.innerHTML = `<h2 id="overlay-title">${internshipDetails[key].title}</h2>${internshipDetails[key].html}`;
+        overlay.classList.add('show');
+        overlay.focus();
+        internshipsList.style.display = 'none'; // hide list when an internship is opened
       }
     });
   });
