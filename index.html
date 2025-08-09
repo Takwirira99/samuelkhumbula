@@ -195,7 +195,25 @@
     <header class="bg-gray-900 py-4 shadow-lg fixed top-0 left-0 right-0 z-10">
         <nav class="container flex justify-between items-center">
             <!-- Logo -->
-            <a href="#" class="text-3xl font-bold gradient-text rounded-lg p-2">TQuants</a>
+            <a href="#" class="flex items-center space-x-3 text-3xl font-bold">
+                <!-- Symmetrical SVG Logo -->
+                <svg width="48" height="48" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="transform transition-transform duration-300 hover:rotate-12">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#a855f7;" />
+                            <stop offset="100%" style="stop-color:#6366f1;" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Symmetrical Orbits -->
+                    <ellipse cx="50" cy="50" rx="45" ry="20" stroke="url(#logoGradient)" stroke-width="4" fill="none" />
+                    <ellipse cx="50" cy="50" rx="45" ry="20" stroke="#34d399" stroke-width="4" fill="none" transform="rotate(60 50 50)" />
+                    <ellipse cx="50" cy="50" rx="45" ry="20" stroke="url(#logoGradient)" stroke-width="4" fill="none" transform="rotate(120 50 50)" />
+                    <!-- Nucleus -->
+                    <circle cx="50" cy="50" r="12" fill="#2d3748" stroke="#6366f1" stroke-width="2"/>
+                    <text x="50" y="58" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#e2e8f0" text-anchor="middle">TQ</text>
+                </svg>
+                <span class="gradient-text">TQuants</span>
+            </a>
 
             <!-- Navigation Links -->
             <div class="hidden md:flex md:flex-grow md:justify-center space-x-6">
@@ -203,7 +221,6 @@
                 <a href="#dual-passions" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Our Focus</a>
                 <a href="#bots" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Bots</a>
                 <a href="#projects" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Projects</a>
-                <a href="#professional-resume" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">My Resume</a>
                 <a href="#oncozim-app" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Oncozim Research</a>
                 <a href="#about" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">About Us</a>
                 <a href="#contact" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Contact</a>
@@ -225,7 +242,6 @@
             <a href="#dual-passions" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Our Focus</a>
             <a href="#bots" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Bots</a>
             <a href="#projects" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Projects</a>
-            <a href="#professional-resume" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">My Resume</a>
             <a href="#oncozim-app" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Oncozim Research</a>
             <a href="#about" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">About Us</a>
             <a href="#contact" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Contact</a>
@@ -274,26 +290,23 @@
     <section id="about" class="py-16 bg-gray-900">
         <div class="container">
             <h2 class="text-4xl font-bold text-center mb-12 gradient-text">About TQuants</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
-                        At TQuants, we are pioneers in the realm of quantitative finance, dedicated to building
-                        cutting-edge algorithmic trading strategies. Our expertise spans both traditional stock markets
-                        and the dynamic world of cryptocurrency, where we leverage data science, machine learning,
-                        and advanced statistical models to identify and capitalize on market inefficiencies.
-                    </p>
-                    <p class="text-lg text-gray-300 leading-relaxed">
-                        Our mission is to empower traders and investors with sophisticated, automated solutions that
-                        aim to maximize returns while managing risk. We are committed to transparency, innovation,
-                        and continuous improvement in all our endeavors.
-                    </p>
-                </div>
-                <div class="flex justify-center">
-                    <!-- Placeholder image or SVG for About Us -->
-                    <svg class="w-64 h-64 text-purple-400" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93h2c0 3.87 3.13 7 7 7v2zm6.93-2.5l-1.47-1.47A7.97 7.97 0 0019 12h2c0 2.5-.98 4.75-2.57 6.43zM12 4.07V2c3.95.49 7 3.85 7 7.93h-2c0-3.87-3.13-7-7-7zM12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path>
-                    </svg>
-                </div>
+            <div class="flex justify-center">
+                <!-- Symmetrical SVG Logo -->
+                <svg width="256" height="256" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="transform transition-transform duration-300 hover:rotate-12">
+                    <defs>
+                        <linearGradient id="logoGradientLarge" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#a855f7;" />
+                            <stop offset="100%" style="stop-color:#6366f1;" />
+                        </linearGradient>
+                    </defs>
+                    <!-- Symmetrical Orbits -->
+                    <ellipse cx="50" cy="50" rx="45" ry="20" stroke="url(#logoGradientLarge)" stroke-width="4" fill="none" />
+                    <ellipse cx="50" cy="50" rx="45" ry="20" stroke="#34d399" stroke-width="4" fill="none" transform="rotate(60 50 50)" />
+                    <ellipse cx="50" cy="50" rx="45" ry="20" stroke="url(#logoGradientLarge)" stroke-width="4" fill="none" transform="rotate(120 50 50)" />
+                    <!-- Nucleus -->
+                    <circle cx="50" cy="50" r="12" fill="#2d3748" stroke="#6366f1" stroke-width="2"/>
+                    <text x="50" y="58" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#e2e8f0" text-anchor="middle">TQ</text>
+                </svg>
             </div>
         </div>
     </section>
@@ -417,204 +430,6 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    ---
-
-    <!-- Professional Resume Section -->
-    <section id="professional-resume" class="py-16 bg-gray-900">
-        <div class="container mx-auto p-4 sm:p-6 lg:p-8">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">My Professional Resume</h2>
-
-            <div class="bg-gray-800 rounded-lg shadow-xl p-6 md:p-10 text-gray-300">
-                <!-- Resume Header -->
-                <div class="text-center pb-4 mb-8 border-b border-gray-700">
-                    <h1 class="text-4xl font-extrabold text-white mb-2">Samuel Khumbula</h1>
-                    <p class="text-lg intro-container">
-                        A dedicated PhD student in Physics with a minor in Mathematics, specializing in nuclear physics simulations and passionate about building autonomous systems. Leveraging a strong foundation in quantitative methods and computational physics, I independently develop advanced algorithmic trading strategies that integrate AI, logic, and conditional frameworks to adapt to real-world markets. My work reflects a blend of analytical rigor, creativity, and a drive to build intelligent systems that operate independently in complex environments.
-                    </p>
-                    <div class="mt-4">
-                        <a href="path/to/your/resume.pdf" download class="btn-primary inline-block">Download Full Resume (PDF)</a>
-                    </div>
-                </div>
-
-                <!-- Education -->
-                <div class="mb-8">
-                    <h3 class="text-2xl font-semibold text-white mb-4">Education</h3>
-                    <ul>
-                        <li><strong>PhD in Physics</strong>, University of New Hampshire <span class="status in-progress">In Progress</span></li>
-                        <li><strong>Bachelor of Science in Physics</strong>, Minor in Mathematics, Keene State College <span class="status completed">Conferred</span></li>
-                    </ul>
-                </div>
-
-                <!-- Technical Skills -->
-                <div class="mb-8">
-                    <h3 class="text-2xl font-semibold text-white mb-4">Technical Skills</h3>
-                    <ul>
-                        <li><strong>Languages:</strong> Python, C++</li>
-                        <li><strong>Libraries:</strong> pandas, NumPy, TensorFlow, scikit-learn</li>
-                        <li><strong>APIs:</strong> Kraken, Firebase</li>
-                        <li><strong>Data Analysis:</strong> Time series modeling, technical indicators, LSTM networks</li>
-                        <li><strong>Tools:</strong> Git, Firestore, Jupyter, VS Code, Linux</li>
-                    </ul>
-                </div>
-
-                <!-- Teaching Experience -->
-                <div class="mb-8">
-                    <h3 class="text-2xl font-semibold text-white mb-4">Teaching Experience</h3>
-                    <ul>
-                        <li><strong>Teaching Assistant – PHYS 407: General Physics I</strong>
-                            <ul>
-                                <li>Served as lab instructor and lecture course support for a calculus-based physics course focused on motion, forces, energy, momentum, and oscillations.</li>
-                                <li>Led weekly lab sessions, beginning with concise concept overviews that connected lecture material to hands-on experiments.</li>
-                                <li>Guided students through experimental setups, fostering confidence with lab equipment and scientific reasoning.</li>
-                                <li>Held regular office hours and provided responsive, individualized academic support.</li>
-                                <li>Graded lab reports and exams with an emphasis on fairness, consistency, and constructive feedback.</li>
-                                <li>Collaborated with the lead instructor to align lab activities with lecture goals and adapt instruction to student needs.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Research & Internships -->
-                <div class="mb-8">
-                    <h3 class="2xl font-semibold text-white mb-4">Research & Internships</h3>
-                    <ul>
-                        <li><strong>Physical Chemistry Intern</strong>, New Hampshire INBRE (Fall 2023 - Spring 2025)
-                            <ul>
-                                <li>Conducted nuclear physics simulations using Monte Carlo methods.</li>
-                                <li>Assisted in data analysis and visualization using Python.</li>
-                                <li>Collaborated with senior researchers on experiment design and reporting.</li>
-                            </ul>
-                        </li>
-                        <li><strong>Medical Physics Intern</strong>, Perelman School of Medicine, University of Pennsylvania (Summer 2024)
-                            <ul>
-                                <li>Developed backend APIs in Python and Flask.</li>
-                                <li>Implemented unit testing and contributed to project documentation.</li>
-                                <li>Participated in agile team practices and code reviews.</li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- PhD Coursework -->
-                <div class="mb-8">
-                    <h3 class="text-2xl font-semibold text-white mb-4">PhD Coursework</h3>
-                    <p><strong>Completed:</strong></p>
-                    <ul><li>Completed classes will appear here</li></ul>
-                    <p><strong>In Progress:</strong></p>
-                    <ul>
-                        <li>Classical Mechanics (Physics 939), 3 Credits</li>
-                        <li>Introduction to Physics Research and Teaching (Physics 806), 1 Credit</li>
-                        <li>Mathematical Physics (Physics 931), 3 Credits</li>
-                    </ul>
-                </div>
-
-                <!-- Undergraduate Coursework (Relevant Only) -->
-                <div class="mb-8">
-                    <h3 class="text-2xl font-semibold text-white mb-4">Undergraduate Coursework (Relevant Only)</h3>
-                    <p><strong>Fall 2021</strong></p>
-                    <ul>
-                        <li>University Physics I (& Lab)</li>
-                        <li>Calculus I</li>
-                        <li>Ultra-Precision Manufacturing (& Lab)</li>
-                        <li>Public Speaking</li>
-                        <li>First Year Seminar</li>
-                    </ul>
-                    <p><strong>Spring 2022</strong></p>
-                    <ul>
-                        <li>Calculus II</li>
-                        <li>Introduction to Optics (& Lab)</li>
-                        <li>Classical Mechanics</li>
-                        <li>Electricity and Electronics Fundamentals (&Lab)</li>
-                    </ul>
-                    <p><strong>Fall 2022</strong></p>
-                    <ul>
-                        <li>General Chemistry (&Lab) </li>
-                        <li>Differential Equations</li>
-                        <li>Python Programming</li>
-                        <li>Linear Algebra</li>
-                        <li>University Physics II (& Lab)</li>
-                    </ul>
-                    <p><strong>Spring 2023</strong></p>
-                    <ul>
-                        <li>General Chemistry II</li>
-                        <li>Applied Statistics</li>
-                        <li>Cells and Molecules</li>
-                    </ul>
-                    <p><strong>Fall 2023</strong></p>
-                    <ul>
-                        <li>Organic Chemistry I (& Lab)</li>
-                        <li>Graphic Design Process</li>
-                        <li>Physical Chemistry</li>
-                        <li>Introduction to Space Physics (& Lab)</li>
-                        <li>Discrete Math with Proof</li>
-                    </ul>
-                    <p><strong>Spring 2024</strong></p>
-                    <ul>
-                        <li>Empirical Physical Chemistry (& Lab)</li>
-                        <li>Vector Calculus</li>
-                        <li>Electricity and Magnetism</li>
-                        <li>Forensic Biology (& Lab)</li>
-                    </ul>
-                    <p><strong>Fall 2024</strong></p>
-                    <ul>
-                        <li>Motion Design</li>
-                        <li>Laser Optics (& Lab)</li>
-                        <li>Quantum Mechanics</li>
-                    </ul>
-                    <p><strong>Spring 2025</strong></p>
-                    <ul>
-                        <li>Human Anatomy and Physiology (& Lab)</li>
-                        <li>Product Design Principles (& Lab)</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Resume Specific Styles (No JS needed for static content) -->
-        <style>
-            #professional-resume .status {
-                font-size: 0.75rem;
-                padding: 0.2rem 0.6rem;
-                border-radius: 0.3rem;
-                margin-left: 0.5rem;
-                vertical-align: middle;
-            }
-            #professional-resume .completed {
-                background-color: #b0f0c8; /* Light green */
-                color: #003e1f; /* Dark green text */
-            }
-            #professional-resume .in-progress {
-                background-color: #c0ecf5; /* Light blue */
-                color: #003747; /* Dark blue text */
-            }
-            #professional-resume ul {
-                list-style-type: disc;
-                padding-left: 1.5rem;
-            }
-            #professional-resume ul ul { /* Nested lists */
-                list-style-type: circle;
-                padding-left: 1.2rem;
-            }
-            #professional-resume a {
-                color: #d4bfff;
-                text-decoration: none;
-            }
-            #professional-resume a:hover {
-                text-decoration: underline;
-            }
-            #professional-resume .intro-container {
-                font-size: 1rem;
-                line-height: 1.45;
-                color: #eee;
-                text-align: justify;
-            }
-            #professional-resume .intro-container p {
-                margin: 0;
-                padding: 0.25rem 0;
-            }
-        </style>
     </section>
 
     <!-- Oncozim App Section -->
@@ -1123,7 +938,7 @@
                     let chatHistory = [];
                     chatHistory.push({ role: "user", parts: [{ text: prompt }] });
                     const payload = { contents: chatHistory };
-                    const apiKey = "AIzaSyD9KA7w3aVYxGKSAm1hszf-BzVxbb7Dzvo"; // Found at  https://aistudio.google.com/app/apikey.
+                    const apiKey = ""; // If you want to use models other than gemini-2.5-flash-preview-05-20 or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
 
                     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
