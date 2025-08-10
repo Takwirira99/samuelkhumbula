@@ -187,6 +187,25 @@
             text-decoration: none;
             cursor: pointer;
         }
+        #goToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #6366f1;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        #goToTopBtn:hover {
+            background-color: #4f46e5;
+        }
     </style>
 </head>
 <body>
@@ -511,30 +530,22 @@
 
             <section id="quiz-oncozim" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md mt-8">
                 <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-extrabold mb-6 text-gray-900 dark:text-white text-center">Imaging & Quantitative Health Quiz</h2>
+                    <h2 class="text-4xl font-extrabold mb-6 text-gray-900 dark:text-white text-center">Medical Physics ABR Exam Prep Quiz</h2>
                     <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300">
-                        Medical imaging techniques like MRI, CT, and PET are essential for early cancer detection and treatment. However, many <strong>Zimbabweans</strong> lack access to and understanding of these tools.
+                        Prepare for the American Board of Radiology (ABR) certification exams in Medical Physics with our targeted quiz. These questions are designed to test your understanding of the core physics principles in diagnostic imaging, nuclear medicine, and radiation therapy.
                     </p>
                     <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300">
-                        Early diagnosis improves treatment success and survival, especially in cancers common in Zimbabwe, where late detection remains a challenge.
+                        Each session presents 10 shuffled questions covering key ABR topics. After each answer, you'll receive an immediate, AI-generated explanation to solidify your knowledge.
                     </p>
                     <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300">
-                        <strong>Oncozim by Takwirira</strong> develops AI-driven software to detect tumors directly from medical images, enabling faster, more accessible diagnoses and better patient outcomes, leveraging <strong>quantitative image analysis and predictive modeling</strong>.
+                        <strong>Take our quiz</strong> to sharpen your skills and build confidence for your board exams.
                     </p>
-                    <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300">
-                        Being informed empowers patients to engage confidently with their care teams and make better health decisions, fostering <strong>data literacy</strong> in public health.
-                    </p>
-                    <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300">
-                        <strong>Take our quiz</strong> to learn key facts about cancer imaging. Questions refresh weekly, and we plan to offer translations to reach all communities in Zimbabwe. This quiz is designed to test and improve <strong>quantitative understanding of medical imaging principles</strong>.
-                    </p>
-                    <button id="start-quiz-btn" class="mt-8 px-8 py-4 bg-emerald-600 text-white font-bold rounded-full shadow-lg hover:bg-emerald-700 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-emerald-300">Start Quiz</button>
-                    <div id="quiz-form" class="mt-4"></div>
-                    <div id="quiz-result" class="mt-4"></div>
+                    <button id="start-quiz-btn" class="mt-8 px-8 py-4 bg-emerald-600 text-white font-bold rounded-full shadow-lg hover:bg-emerald-700 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-emerald-300">Start ABR Prep Quiz</button>
+                    <div id="quiz-form" class="mt-4 hidden"></div>
+                    <div id="quiz-result" class="mt-4 hidden"></div>
                     <div id="highest-score-display" class="mt-4 text-gray-300"></div>
                 </div>
             </section>
-
-           
 
             <!-- Contact Section - Placeholder for now -->
             <section id="contact-oncozim" class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 rounded-lg shadow-md mt-8">
@@ -624,17 +635,18 @@
         });
 
         // Go to Top Button functionality
+        const goToTopBtn = document.getElementById("goToTopBtn");
         window.onscroll = function() {scrollFunction()};
 
         function scrollFunction() {
             if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("goToTopBtn").style.display = "block";
+                goToTopBtn.style.display = "block";
             } else {
-                document.getElementById("goToTopBtn").style.display = "none";
+                goToTopBtn.style.display = "none";
             }
         }
 
-        function goToTop() {
+        window.goToTop = function() { // Make it globally accessible
             document.body.scrollTop = 0; // For Safari
             document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
         }
@@ -682,92 +694,28 @@
 
         // --- Oncozim App JavaScript ---
 
-        // Quiz Data
+        // Quiz Data: ABR Medical Physics Style Questions
         const allQuizData = [
-            { question: "What does MRI primarily use to generate images?", options: ["X-rays", "Magnetic fields & radio waves", "Sound waves", "Gamma rays"], answer: 1 },
-            { question: "What tracer is commonly used in PET scans?", options: ["Iodine-131", "Technetium-99m", "Fluorodeoxyglucose (FDG)", "Gadolinium"], answer: 2 },
-            { question: "CT scans are best for visualizing:", options: ["Soft tissues", "Bone fractures", "Ligaments", "Muscle tears"], answer: 1 },
-            { question: "Radiation therapy aims to:", options: ["Cure viral infections", "Kill cancer cells using ionizing radiation", "Deliver chemotherapy", "Visualize tumors"], answer: 1 },
-            { question: "Which imaging technique does NOT use ionizing radiation?", options: ["CT", "PET", "MRI", "X-ray"], answer: 2 },
-            { question: "PET-CT combines functional imaging with:", options: ["MRI detail", "CT detail", "Ultrasound mapping", "Bone scan"], answer: 1 },
-            { question: "Which of the following is a late side effect of radiation therapy?", options: ["Hair loss", "Skin redness", "Fibrosis", "Nausea"], answer: 2 },
-            { question: "MRI contrast agents often contain:", options: ["Lead", "Barium", "Gadolinium", "Iodine"], answer: 2 },
-            { question: "Which scan is most sensitive for brain soft tissue detail?", options: ["X-ray", "CT", "PET", "MRI"], answer: 3 },
-            { question: "Which of the following improves MRI resolution?", options: ["Higher magnetic field strength", "More X-ray dose", "Lower radiofrequency", "Using ultrasound gel"], answer: 0 },
-            { question: "What is the primary danger associated with excessive exposure to ionizing radiation?", options: ["Dehydration", "Hearing loss", "Cellular damage and cancer risk", "Muscle atrophy"], answer: 2 },
-            { question: "Which imaging modality is commonly used to diagnose gallstones?", options: ["MRI", "CT Scan", "Ultrasound", "X-ray"], answer: 2 },
-            { question: "In X-ray imaging, what appears white on the image?", options: ["Air", "Fat", "Water", "Bone"], answer: 3 },
-            { question: "What does PACS stand for in radiology?", options: ["Patient Access Control System", "Picture Archiving and Communication System", "Physical Assessment and Clinical Study", "Portable Anatomy Classification System"], answer: 1 },
-            { question: "Which type of radiation is used in nuclear medicine scans?", options: ["Alpha particles", "Beta particles", "Gamma rays", "Neutrons"], answer: 2 },
-            { question: "What is a common use for a DEXA scan?", options: ["Brain imaging", "Bone density measurement", "Kidney function assessment", "Cardiac imaging"], answer: 1 },
-            { question: "Which organ is most sensitive to radiation?", options: ["Skin", "Brain", "Gonads", "Muscles"], answer: 2 },
-            { question: "What is an angiogram used to visualize?", options: ["Bones", "Blood vessels", "Muscles", "Nerves"], answer: 1 },
-            { question: "What does 'kVp' refer to in X-ray technology?", options: ["Kilovolt-peak", "Kilo-volume particle", "Kinetic velocity pressure", "Kelvin temperature peak"], answer: 0 },
-            { question: "What safety precaution is crucial when performing an MRI?", options: ["Wearing lead apron", "Removing all metallic objects", "Using ear protection", "Fasting before the scan"], answer: 1 },
-            { question: "What is the primary function of a radiologist?", options: ["Perform surgeries", "Interpret medical images", "Prescribe medication", "Conduct lab tests"], answer: 1 },
-            { question: "Which imaging technique uses sound waves?", options: ["CT", "MRI", "X-ray", "Ultrasound"], answer: 3 },
-            { question: "What is 'contrast media' used for in imaging?", options: ["To reduce radiation dose", "To enhance visibility of specific tissues or structures", "To speed up the imaging process", "To cool down the scanner"], answer: 1 },
-            { question: "Which condition is often diagnosed using a mammogram?", options: ["Heart disease", "Breast cancer", "Lung infection", "Kidney stones"], answer: 1 },
-            { question: "What is absorbed dose measured in?", options: ["Sieverts (Sv)", "Grays (Gy)", "Becquerels (Bq)", "Roentgens (R)"], answer: 1 },
-            { question: "What is a common application for fluoroscopy?", options: ["Static bone imaging", "Real-time imaging of body structures in motion", "Detailed soft tissue analysis", "Measuring brain activity"], answer: 1 },
-            { question: "What does 'ALARA' stand for in radiation safety?", options: ["As Little As Reasonably Achievable", "Always Limit All Radiation Avoidance", "Active Level And Radiation Alert", "Automated Localized Area Radiation Assessment"], answer: 0 },
-            { question: "Which imaging technique would be best for evaluating a torn meniscus in the knee?", options: ["X-ray", "CT scan", "MRI", "Ultrasound"], answer: 2 },
-            { question: "What is a nuclear stress test used to evaluate?", options: ["Bone strength", "Kidney function", "Heart blood flow", "Brain tumors"], answer: 2 },
-            { question: "What does SPECT stand for?", options: ["Single-Photon Emission Computed Tomography", "Specialized Particle Emission CT", "Surface Photonic Emission Camera Technique", "Systematic Proton Emission Capture Test"], answer: 0 },
-            { question: "Which type of imaging uses a rotating X-ray tube and detectors?", options: ["MRI", "Ultrasound", "CT scan", "PET scan"], answer: 2 },
-            { question: "What is the main advantage of open MRI over closed MRI?", options: ["Higher image quality", "Less claustrophobia for patients", "Faster scan times", "Lower cost"], answer: 1 },
-            { question: "What is a common risk of intravenous contrast administration?", options: ["Sunburn", "Allergic reaction", "Hair loss", "Weight gain"], answer: 1 },
-            { question: "Which imaging technique is often used for prenatal diagnosis?", options: ["CT scan", "X-ray", "Ultrasound", "PET scan"], answer: 2 },
-            { question: "What is the purpose of shielding in radiation therapy?", options: ["To increase radiation dose to the tumor", "To protect healthy tissues from radiation", "To make the patient more comfortable", "To improve image clarity"], answer: 1 },
-            { question: "Which body part is most commonly imaged with a barium swallow study?", options: ["Brain", "Lungs", "Esophagus and stomach", "Kidneys"], answer: 2 },
-            { question: "What is the typical magnetic field strength of a clinical MRI scanner?", options: ["0.1 Tesla", "1.5 - 3 Tesla", "10 Tesla", "100 Tesla"], answer: 1 },
-            { question: "What is the primary application of elastography?", options: ["Measuring blood flow", "Assessing tissue stiffness", "Visualizing bone fractures", "Detecting nerve damage"], answer: 1 },
-            { question: "What is the minimum number of X-ray views typically taken for a suspected bone fracture?", options: ["One", "Two (at 90 degrees to each other)", "Three", "Four"], answer: 1 },
-            { question: "What is a 'hot spot' on a nuclear medicine scan indicative of?", options: ["Area of reduced metabolic activity", "Area of increased metabolic activity or tracer uptake", "Area of infection only", "Artifact from metal"], answer: 1 },
-            { question: "Which type of imaging provides real-time functional information about metabolism?", options: ["CT", "PET", "MRI", "X-ray"], answer: 2 },
-            { question: "What is used to produce radioisotopes for medical imaging?", options: ["X-ray tube", "Particle accelerator (cyclotron)", "Large magnet", "Ultrasound transducer"], answer: 1 },
-            { question: "Which contrast agent is commonly used for CT scans?", options: ["Gadolinium", "Barium sulfate", "Iodinated contrast", "Saline"], answer: 2 },
-            { question: "What is a 'slice' in the context of CT or MRI imaging?", options: ["A portion of a bone", "A thin cross-sectional image of the body", "A type of contrast agent", "A measurement of radiation dose"], answer: 1 },
-            { question: "What is the main concern when using X-rays on pregnant patients?", options: ["Claustrophobia", "Risk of harm to the fetus", "Discomfort for the mother", "High cost"], answer: 1 },
-            { question: "What does 'mCi' stand for in nuclear medicine?", options: ["Microcurie", "Millicurie", "Mega-coulomb", "Meter-calorie"], answer: 1 },
-            { question: "Which imaging technique can assess blood flow and organ perfusion?", options: ["Standard X-ray", "Fluoroscopy", "Nuclear medicine scans", "Basic ultrasound"], answer: 2 },
-            { question: "What is the primary use of a cardiac MRI?", options: ["To visualize lung infections", "To assess heart structure and function", "To detect bone tumors", "To image the digestive tract"], answer: 1 },
-            { question: "What is the typical effect of radiation on fast-dividing cells (like cancer cells)?", options: ["They become stronger", "They are more susceptible to radiation damage", "They stop dividing temporarily", "They absorb less radiation"], answer: 1 },
-            { question: "Which type of biopsy is often guided by imaging (e.g., ultrasound or CT)?", options: ["Surgical biopsy", "Needle biopsy", "Punch biopsy", "Excisional biopsy"], answer: 1 },
-            { question: "What is the purpose of a lead apron in X-ray procedures?", options: ["To keep the patient warm", "To protect the patient and staff from scattered radiation", "To enhance X-ray penetration", "To provide comfort"], answer: 1 },
-            { question: "Which imaging modality is commonly used for evaluating breast tissue density?", options: ["CT Scan", "Ultrasound", "Mammography", "MRI"], answer: 2 },
-            { question: "What is 'radiopaque' referring to in medical imaging?", options: ["Transparent to X-rays", "Opaque to X-rays", "Emitting sound waves", "Conducting electricity"], answer: 1 },
-            { question: "What type of energy is used in PET scans?", options: ["Radio waves", "Magnetic fields", "Gamma rays from positron annihilation", "Infrared light"], answer: 2 },
-            { question: "Which of these is a common indication for a bone scan?", options: ["Fractures, infections, and tumors", "Muscle strains", "Ligament tears", "Brain bleeds"], answer: 0 },
-            { question: "What does 'attenuation' mean in the context of X-rays?", options: ["Increasing X-ray intensity", "The reduction of the X-ray beam's intensity as it passes through matter", "Reflection of X-rays", "Changing the X-ray frequency"], answer: 1 },
-            { question: "Which element is crucial for the strong magnetic field in an MRI scanner?", options: ["Copper", "Aluminum", "Niobium-titanium (superconductor)", "Iron"], answer: 2 },
-            { question: "What is a 'hot lab' in nuclear medicine?", options: ["A lab for heating samples", "A designated area for handling radioactive materials", "A lab with high temperatures", "A research lab for new technologies"], answer: 1 },
-            { question: "What is a common side effect of radiation therapy on the skin?", options: ["Increased pigmentation", "Redness and irritation (radiation dermatitis)", "Cooling sensation", "Numbness"], answer: 1 },
-            { question: "Which imaging technique is most suitable for dynamic studies of joints and tendons?", options: ["X-ray", "CT scan", "MRI", "Ultrasound"], answer: 3 },
-            { question: "What does 'dose equivalent' refer to in radiation safety?", options: ["The total energy absorbed by tissue", "A measure of the biological effect of radiation", "The rate of radiation exposure", "The amount of radioactive material"], answer: 1 },
-            { question: "What is the primary advantage of 3D rendering from CT or MRI data?", options: ["Faster scan times", "Better visualization of complex anatomical relationships", "Reduced radiation dose", "Lower cost"], answer: 1 },
-            { question: "Which of the following is NOT a component of a typical X-ray tube?", options: ["Anode", "Cathode", "Filament", "Transducer"], answer: 3 },
-            { question: "What is the role of a dosimetrist in radiation oncology?", options: ["To interpret patient images", "To calibrate imaging machines", "To plan and calculate radiation doses for patients", "To perform patient interviews"], answer: 2 },
-            { question: "Which imaging modality is non-ionizing and can be used repeatedly for monitoring?", options: ["CT", "PET", "Ultrasound", "X-ray"], answer: 2 },
-            { question: "What is a 'tracer' in nuclear medicine?", options: ["A device for tracking patient movement", "A radioactive substance used to image and assess organ function", "A contrast agent for MRI", "A type of X-ray detector"], answer: 1 },
-            { question: "What condition might be evaluated with a CT angiogram?", options: ["Bone density", "Blood clots or blockages in arteries", "Muscle tears", "Brain tumors"], answer: 1 },
-            { question: "What is the typical patient preparation for an abdominal ultrasound?", options: ["Full bladder", "Empty stomach (fasting)", "Drinking barium solution", "Intravenous contrast injection"], answer: 1 },
-            { question: "What is 'radiation recall' syndrome?", options: ["A patient's memory of their radiation therapy", "A skin reaction that occurs in a previously irradiated field after chemotherapy", "The process of recalling scattered radiation", "A method to re-energize radiation beams"], answer: 1 },
-            { question: "Which of the following describes the principle of MRI signal generation?", options: ["Absorption of X-rays by dense tissue", "Reflection of sound waves from interfaces", "Excitation of hydrogen protons by radiofrequency pulses in a strong magnetic field", "Emission of gamma rays from radioactive tracers"], answer: 2 },
-            { question: "What does 'collimation' do in X-ray imaging?", options: ["Increases the X-ray dose", "Narrows the X-ray beam to reduce scatter radiation", "Heats the X-ray tube", "Controls the image brightness"], answer: 1 },
-            { question: "Which substance is used in a barium enema for colon imaging?", options: ["Iodinated contrast", "Saline", "Air", "Barium sulfate"], answer: 3 },
-            { question: "What is the typical duration of a routine MRI scan?", options: ["A few seconds", "5-10 minutes", "20-60 minutes", "Several hours"], answer: 2 },
-            { question: "Which imaging technique is often used to diagnose deep vein thrombosis (DVT)?", options: ["X-ray", "CT scan", "Doppler Ultrasound", "PET scan"], answer: 2 },
-            { question: "What is a 'hot nodule' on a thyroid scan indicative of?", options: ["A non-functioning nodule", "An overactive nodule", "A cancerous nodule", "An artifact"], answer: 1 },
-            { question: "Which imaging modality can be affected by patient motion more significantly?", options: ["X-ray", "CT scan", "MRI", "Ultrasound"], answer: 2 },
-            { question: "What is the primary function of the technologist in radiology?", options: ["Interpreting images", "Operating imaging equipment and positioning patients", "Prescribing treatments", "Performing surgery"], answer: 1 },
-            { question: "What does 'Hounsfield Units' refer to?", options: ["Units of magnetic field strength", "Units of sound wave frequency", "Units of tissue density in CT scans", "Units of radiation exposure"], answer: 2 },
-            { question: "Which type of radiation is commonly used for external beam radiation therapy?", options: ["Alpha particles", "Beta particles", "X-rays and gamma rays", "Microwaves"], answer: 2 },
-            { question: "What is a common application of interventional radiology?", options: ["Performing open heart surgery", "Minimally invasive procedures guided by imaging", "Designing radiation therapy plans", "Analyzing blood samples"], answer: 1 },
-            { question: "Which imaging technique is considered the gold standard for evaluating traumatic brain injury (TBI) acutely?", options: ["MRI", "PET", "CT scan", "Ultrasound"], answer: 2 },
-            { question: "What is the main concern with using MRI in patients with pacemakers?", options: ["Image quality degradation", "Interference with pacemaker function, potentially life-threatening", "Allergic reaction to contrast", "Claustrophobia"], answer: 1 },
-            { question: "What does 'fractionation' mean in radiation therapy?", options: ["Delivering the total radiation dose in multiple small doses over time", "Dividing the tumor into fractions", "Reducing the total radiation dose", "Increasing the radiation dose to a specific area"], answer: 0 },
-            { question: "Which medical specialty focuses on the diagnostic interpretation of medical images?", options: ["Oncology", "Cardiology", "Radiology", "Pathology"], answer: 2 },
+            { question: "In a 6 MV linear accelerator, what is the primary interaction mechanism for photons in the flattening filter?", options: ["Photoelectric Effect", "Compton Scattering", "Pair Production", "Rayleigh Scattering"], answer: 1 },
+            { question: "According to TG-51 protocol, what is the value of k_Q for a 6 MV photon beam when using an Exradin A12 farmer chamber?", options: ["It is always 1.0", "It must be measured for each beam", "It is obtained from a table based on %dd(10)x", "It depends on the room temperature and pressure"], answer: 2 },
+            { question: "What is the primary purpose of the Hounsfield Unit (HU) scale in CT imaging?", options: ["To measure the X-ray tube current (mA)", "To quantify the radiodensity of tissues relative to water", "To determine the slice thickness", "To calculate the patient's radiation dose"], answer: 1 },
+            { question: "In MRI, T2* decay is faster than T2 decay primarily due to:", options: ["Spin-lattice interactions", "Higher magnetic field strength", "Inhomogeneities in the main magnetic field (B0)", "The use of gadolinium contrast"], answer: 2 },
+            { question: "For a 10x10 cm photon beam at 100 cm SSD, the PDD at 10 cm depth is 67.1%. What is the approximate Tissue-Air Ratio (TAR) at the same depth?", options: ["0.55", "0.67", "0.75", "Cannot be determined from PDD"], answer: 2 },
+            { question: "The threshold energy for pair production in the field of a nucleus is:", options: ["0.511 MeV", "1.022 MeV", "2.044 MeV", "There is no threshold"], answer: 1 },
+            { question: "What is the function of a bowtie filter in a CT scanner?", options: ["To improve image contrast", "To reduce beam hardening artifacts and patient dose", "To increase the spatial resolution", "To filter out low-energy x-rays"], answer: 1 },
+            { question: "In PET imaging, the two annihilation photons are detected in coincidence. What is their energy and angular separation?", options: ["511 keV, 90 degrees", "1.022 MeV, 180 degrees", "511 keV, 180 degrees", "1.022 MeV, 90 degrees"], answer: 2 },
+            { question: "The annual occupational dose limit for the whole body, according to the NRC, is:", options: ["5 mSv", "50 mSv", "150 mSv", "500 mSv"], answer: 1 },
+            { question: "What is the primary advantage of Intensity-Modulated Radiation Therapy (IMRT) over 3D Conformal Radiation Therapy (3D-CRT)?", options: ["Shorter treatment times", "Lower machine cost", "Ability to create highly conformal dose distributions with steep dose gradients", "Uses non-ionizing radiation"], answer: 2 },
+            { question: "In X-ray production, 'bremsstrahlung' radiation results from:", options: ["Electron-electron interactions", "The deceleration of electrons by the atomic nucleus of the target material", "Photoelectric absorption in the target", "Characteristic X-ray emission"], answer: 1 },
+            { question: "What does the term 'KERMA' stand for?", options: ["Kinetic Energy Released per unit MAss", "Kinetic Energy Radiated in Matter", "Kiloelectronvolt Energy Released in Material", "Kinetic Electron Radiation Measurement"], answer: 0 },
+            { question: "In brachytherapy, the dose rate constant (Λ) for an I-125 source is approximately:", options: ["0.1 cGy/h/U", "1.0 cGy/h/U", "10 cGy/h/U", "100 cGy/h/U"], answer: 1 },
+            { question: "Which quality assurance (QA) test is performed daily on a linear accelerator?", options: ["Beam flatness and symmetry", "Output constancy (photon and electron)", "Light/radiation field coincidence", "Emergency stop functionality"], answer: 1 },
+            { question: "The half-life of Technetium-99m (Tc-99m), commonly used in nuclear medicine, is approximately:", options: ["6 minutes", "6 hours", "6 days", "60 days"], answer: 1 },
+            { question: "What is the primary determinant of contrast in an unenhanced CT image?", options: ["Electron density", "Atomic number (Z)", "Physical density (g/cm³)", "All of the above"], answer: 3 },
+            { question: "For electron beam therapy, the practical range (Rp) in cm in water is approximately related to the beam energy (E0) in MeV by:", options: ["Rp ≈ E0 / 2", "Rp ≈ E0 * 2", "Rp ≈ E0 / 3", "Rp ≈ E0 * 3"], answer: 0 },
+            { question: "A 'klystron' or 'magnetron' in a linear accelerator is used to:", options: ["Generate the high-energy electron beam", "Focus the electron beam onto the target", "Generate high-power microwaves to accelerate electrons", "Steer the photon beam towards the patient"], answer: 2 },
+            { question: "The 'build-up' region in photon beam dosimetry refers to the depth where:", options: ["Dose decreases rapidly", "Kerma is at its maximum", "The dose increases from the surface to the depth of maximum dose (d_max)", "Electronic equilibrium is first lost"], answer: 2 },
+            { question: "Which radioisotope is commonly used for High-Dose-Rate (HDR) brachytherapy?", options: ["Iodine-125", "Palladium-103", "Iridium-192", "Cesium-137"], answer: 2 }
         ];
 
         let currentQuizQuestions = [];
@@ -823,10 +771,10 @@
                 });
                 questionHtml += `</div>
                     <button id="submit-answer-btn" class="btn-primary mt-6 w-full">Submit Answer</button>
-                    <div id="explanation-area" class="mt-4 p-3 bg-gray-700 rounded-md hidden">
-                        <p class="font-semibold text-gray-200">Explanation:</p>
-                        <p id="explanation-text" class="text-gray-300"></p>
-                        <button id="next-question-btn" class="btn-primary mt-4">Next Question</button>
+                    <div id="explanation-area" class="mt-4 p-4 bg-gray-700 rounded-md hidden">
+                        <p class="font-semibold text-gray-200 text-lg mb-2">Explanation:</p>
+                        <div id="explanation-text" class="text-gray-300"></div>
+                        <button id="next-question-btn" class="btn-primary mt-4 hidden">Next Question</button>
                     </div>
                 `;
                 quizFormDiv.innerHTML = questionHtml;
@@ -845,6 +793,7 @@
             } else {
                 // Quiz finished - display summary
                 quizFormDiv.innerHTML = '';
+                quizFormDiv.classList.add('hidden');
                 let finalSummaryHtml = `
                     <p class="text-2xl font-bold text-center text-gray-100 mb-4">Quiz Completed!</p>
                     <p class="text-xl text-center text-gray-300 mb-8">You scored ${currentScore} out of ${NUM_QUIZ_QUESTIONS}.</p>
@@ -857,7 +806,7 @@
                             <p class="font-semibold text-gray-100">Question ${idx + 1}: ${result.question}</p>
                             <p class="text-gray-300">Your Answer: ${result.userAnswer} ${result.isCorrect ? '<span class="text-green-400">(Correct)</span>' : '<span class="text-red-400">(Incorrect)</span>'}</p>
                             <p class="text-gray-300">Correct Answer: ${result.correctAnswer}</p>
-                            <p class="text-gray-400 mt-2">Explanation: ${result.explanation}</p>
+                            <div class="text-gray-400 mt-2"><strong>Explanation:</strong> ${result.explanation}</div>
                         </div>
                     `;
                 });
@@ -906,7 +855,7 @@
             // Display loading message for explanation
             const explanationArea = document.getElementById('explanation-area');
             const explanationText = document.getElementById('explanation-text');
-            explanationText.innerHTML = "Loading explanation..."; // Use innerHTML for loading message too
+            explanationText.innerHTML = "Generating AI explanation...";
             explanationArea.classList.remove('hidden');
 
             let explanation = "No explanation available.";
@@ -916,24 +865,26 @@
 
             while (retries < MAX_RETRIES) {
                 try {
-                    const prompt = `Provide a very short, factual explanation (2-3 sentences max) for the following medical imaging question and its correct answer, suitable for someone studying for an ABR exam.
-                    Please use HTML tags for formatting: <strong> for key terms, <em> for emphasis, and newlines for clear paragraphs or bullet points.
+                    const prompt = `Provide a concise, factual explanation (2-3 sentences) for the following medical physics ABR exam question. Use HTML tags for formatting: <strong> for key terms and <em> for emphasis.
                     Question: "${questionData.question}"
-                    Correct Answer: "${correctAnswerText}"
-                    `;
+                    Correct Answer: "${correctAnswerText}"`;
 
                     let chatHistory = [];
                     chatHistory.push({ role: "user", parts: [{ text: prompt }] });
                     const payload = { contents: chatHistory };
-                    const apiKey = "AIzaSyBBMEwBU0YQu-KupGD-86ixllNsHgnszBY"; // If you want to use models other than gemini-2.5-flash-preview-05-20 or imagen-3.0-generate-002, provide an API key here. Otherwise, leave this as-is.
+                    const apiKey = ""; // API key will be injected by the environment.
 
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
                     const response = await fetch(apiUrl, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(payload)
                     });
+
+                    if (!response.ok) {
+                        throw new Error(`API request failed with status ${response.status}`);
+                    }
 
                     const result = await response.json();
                     if (result.candidates && result.candidates.length > 0 &&
@@ -951,7 +902,7 @@
                         await new Promise(resolve => setTimeout(resolve, delay));
                         delay *= 2; // Exponential backoff
                     } else {
-                        explanation = `Failed to load explanation after multiple retries: <em>${error.message}</em>. Please try again later.`;
+                        explanation = `Failed to load explanation after multiple retries. The correct answer is <strong>${correctAnswerText}</strong>.`;
                     }
                 }
             }
@@ -966,7 +917,9 @@
                 explanation: explanation
             });
 
-            document.getElementById('next-question-btn').addEventListener('click', () => {
+            const nextQuestionBtn = document.getElementById('next-question-btn');
+            nextQuestionBtn.classList.remove('hidden');
+            nextQuestionBtn.addEventListener('click', () => {
                 currentQuestionIndex++;
                 displayQuestion();
             });
@@ -979,6 +932,7 @@
             currentScore = 0;
             quizResultsSummary = []; // Reset summary for new quiz
             quizFormDiv.classList.remove('hidden');
+            quizResultDiv.innerHTML = '';
             quizResultDiv.classList.add('hidden');
             startQuizBtn.classList.add('hidden');
             displayQuestion();
