@@ -148,9 +148,7 @@
             <div class="hidden md:flex md:flex-grow md:justify-center space-x-6">
                 <a href="#home" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Home</a>
                 <a href="#our-focus" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Our Focus</a>
-                <a href="#bots" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Bots</a>
                 <a href="#projects" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Projects</a>
-                <a href="#about" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">About Us</a>
                 <a href="#contact" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Contact</a>
             </div>
 
@@ -168,9 +166,7 @@
         <div id="mobile-menu" class="md:hidden bg-gray-800 py-2 hidden">
             <a href="#home" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Home</a>
             <a href="#our-focus" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Our Focus</a>
-            <a href="#bots" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Bots</a>
             <a href="#projects" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Projects</a>
-            <a href="#about" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">About Us</a>
             <a href="#contact" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Contact</a>
         </div>
     </header>
@@ -185,7 +181,7 @@
                 TQuants specializes in advanced quantitative algorithmic development for crypto and stock markets,
                 delivering robust and intelligent trading solutions.
             </p>
-            <a href="#bots" class="btn-primary inline-block">Explore Our Bots</a>
+            <a href="#projects" class="btn-primary inline-block">Explore Our Work</a>
         </div>
     </section>
 
@@ -204,12 +200,73 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
-    <section id="about" class="py-16 bg-gray-900">
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-800">
         <div class="container">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">About TQuants</h2>
-            <div class="flex justify-center">
-                <!-- Symmetrical SVG Logo -->
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Our Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Current Projects -->
+                <div>
+                    <h3 class="text-3xl font-semibold mb-6 text-white text-center">Current Projects</h3>
+                    <div class="space-y-6">
+                        <!-- Autonomous AI Trading Bot -->
+                        <div class="card text-left">
+                            <h4 class="text-xl font-semibold mb-2 text-white">Autonomous AI Trading Bot</h4>
+                            <p class="text-gray-400 mb-2">
+                                Developed a fully autonomous crypto trading bot leveraging the Kraken API for real-time execution and portfolio management.
+                            </p>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Technologies: Python, TensorFlow (LSTM), pandas, NumPy, Firebase, <code>ta</code>, <code>krakenex</code></li>
+                                <li>Functionality: Executes trades, manages portfolio, tracks profits autonomously.</li>
+                                <li>Performance: Consistently profitable, developed and maintained independently.</li>
+                            </ul>
+                            <span class="text-sm text-purple-400">Status: Completed & Live</span>
+                        </div>
+                        <!-- AI-Driven Portfolio Optimization -->
+                        <div class="card text-left">
+                            <h4 class="text-xl font-semibold mb-2 text-white">AI-Driven Portfolio Optimization</h4>
+                            <p class="text-gray-400 mb-2">
+                                Researching and developing an AI-driven system for dynamic portfolio rebalancing
+                                and optimization based on real-time market conditions and risk tolerance.
+                            </p>
+                            <span class="text-sm text-purple-400">Status: Research Phase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Projects -->
+                <div>
+                    <h3 class="text-3xl font-semibold mb-6 text-white text-center">Future Projects</h3>
+                    <div class="space-y-6">
+                        <!-- ML-Powered Market Prediction Engine -->
+                        <div class="card text-left">
+                            <h4 class="text-xl font-semibold mb-2 text-white">ML-Powered Market Prediction Engine</h4>
+                            <p class="text-gray-400 mb-2">
+                                Developing a sophisticated machine learning model to predict short-term market
+                                movements using a combination of technical indicators and sentiment analysis.
+                            </p>
+                            <span class="text-sm text-gray-500">Planned Start: Q1 2026</span>
+                        </div>
+                        <!-- Decentralized Exchange (DEX) Integration -->
+                        <div class="card text-left">
+                            <h4 class="text-xl font-semibold mb-2 text-white">Decentralized Exchange (DEX) Integration</h4>
+                            <p class="text-gray-400 mb-2">
+                                Integrating our arbitrage and liquidity provision bots with various decentralized
+                                exchanges to expand our reach and opportunities.
+                            </p>
+                            <span class="text-sm text-gray-500">Planned Start: Q2 2026</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Contact Section (TQuants) -->
+    <section id="contact" class="py-20 bg-gray-900 text-center rounded-t-lg shadow-xl">
+        <div class="container">
+             <!-- Symmetrical SVG Logo -->
+            <div class="flex justify-center mb-8">
                 <svg width="256" height="256" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="transform transition-transform duration-300 hover:rotate-12">
                     <defs>
                         <linearGradient id="logoGradientLarge" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -226,124 +283,6 @@
                     <text x="50" y="58" font-family="Inter, sans-serif" font-size="16" font-weight="bold" fill="#e2e8f0" text-anchor="middle">TQ</text>
                 </svg>
             </div>
-        </div>
-    </section>
-
-    <!-- Current Bots Section -->
-    <section id="bots" class="py-16 bg-gray-800">
-        <div class="container">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Our Current Bots</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Bot 1 Card -->
-                <div class="card text-left">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">Arbitrage Hunter Bot</h3>
-                    <p class="text-gray-400 mb-4">
-                        This bot identifies and executes arbitrage opportunities across multiple crypto exchanges,
-                        leveraging price discrepancies for risk-free profit.
-                    </p>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>Market: Crypto</li>
-                        <li>Strategy: Cross-exchange Arbitrage</li>
-                        <li>Status: Live, High Performance</li>
-                    </ul>
-                </div>
-
-                <!-- Bot 2 Card -->
-                <div class="card text-left">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">Trend Following Stock Bot</h3>
-                    <p class="text-gray-400 mb-4">
-                        A robust bot designed for stock markets, utilizing advanced trend-following indicators
-                        to capture significant market movements.
-                    </p>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>Market: Stocks (NASDAQ, NYSE)</li>
-                        <li>Strategy: Trend Following, Momentum</li>
-                        <li>Status: Live, Stable Returns</li>
-                    </ul>
-                </div>
-
-                <!-- Bot 3 Card -->
-                <div class="card text-left">
-                    <h3 class="text-2xl font-semibold mb-4 text-white">Volatility Scalper Bot</h3>
-                    <p class="text-gray-400 mb-4">
-                        Specialized in high-frequency trading, this bot profits from short-term price fluctuations
-                        in volatile crypto assets.
-                    </p>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>Market: Crypto (High Volatility Pairs)</li>
-                        <li>Strategy: Scalping, Mean Reversion</li>
-                        <li>Status: Live, Optimized</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-16 bg-gray-900">
-        <div class="container">
-            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Our Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Current Projects -->
-                <div>
-                    <h3 class="text-3xl font-semibold mb-6 text-white text-center">Current Projects</h3>
-                    <div class="space-y-6">
-                        <!-- Project 1 -->
-                        <div class="card text-left">
-                            <h4 class="text-xl font-semibold mb-2 text-white">ML-Powered Market Prediction Engine</h4>
-                            <p class="text-gray-400 mb-2">
-                                Developing a sophisticated machine learning model to predict short-term market
-                                movements using a combination of technical indicators and sentiment analysis.
-                            </p>
-                            <span class="text-sm text-purple-400">Status: In Development - 75% Complete</span>
-                        </div>
-                        <!-- Project 2 -->
-                        <div class="card text-left">
-                            <h4 class="text-xl font-semibold mb-2 text-white">Decentralized Exchange (DEX) Integration</h4>
-                            <p class="text-gray-400 mb-2">
-                                Integrating our arbitrage and liquidity provision bots with various decentralized
-                                exchanges to expand our reach and opportunities.
-                            </p>
-                            <span class="text-sm text-purple-400">Status: Alpha Testing</span>
-                        </div>
-                        <!-- Project 3 - AI Trading Bot (moved from resume) -->
-                        <div class="card text-left">
-                            <h4 class="text-xl font-semibold mb-2 text-white">Autonomous AI Trading Bot</h4>
-                            <p class="text-gray-400 mb-2">
-                                Developed a fully autonomous crypto trading bot leveraging the Kraken API for real-time execution and portfolio management.
-                            </p>
-                            <ul class="list-disc list-inside text-gray-400">
-                                <li>Technologies: Python, TensorFlow (LSTM), pandas, NumPy, Firebase, <code>ta</code>, <code>krakenex</code></li>
-                                <li>Functionality: Executes trades, manages portfolio, tracks profits autonomously.</li>
-                                <li>Performance: Consistently profitable, developed and maintained independently.</li>
-                            </ul>
-                            <span class="text-sm text-purple-400">Status: Completed & Live</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Future Projects -->
-                <div>
-                    <h3 class="text-3xl font-semibold mb-6 text-white text-center">Future Projects</h3>
-                    <div class="space-y-6">
-                        <!-- Future Project 1 -->
-                        <div class="card text-left">
-                            <h4 class="text-xl font-semibold mb-2 text-white">AI-Driven Portfolio Optimization</h4>
-                            <p class="text-gray-400 mb-2">
-                                Researching and developing an AI-driven system for dynamic portfolio rebalancing
-                                and optimization based on real-time market conditions and risk tolerance.
-                            </p>
-                            <span class="text-sm text-gray-500">Planned Start: Q4 2025</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action / Contact Section (TQuants) -->
-    <section id="contact" class="py-20 bg-gray-800 text-center rounded-t-lg shadow-xl">
-        <div class="container">
             <h2 class="text-4xl font-bold mb-6 gradient-text">Ready to Transform Your Trading?</h2>
             <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto text-left">
                 Connect with TQuants today to discuss how our cutting-edge algorithmic solutions can benefit you.
@@ -388,7 +327,7 @@
         });
 
         // Close mobile menu when a link is clicked
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        const mobileMenuLinks = document.querySelectorAll('#mobile-menu a, header nav a');
         mobileMenuLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
