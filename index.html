@@ -46,97 +46,7 @@
         .btn-primary:hover {
             background-color: #4f46e5;
         }
-
-        /* Oncozim Specific Styles (Adapted for Dark Theme) */
-        #oncozim-app {
-            background-color: #1a202c; /* Main dark background */
-            color: #e2e8f0; /* Light text */
-        }
-        #oncozim-app .bg-gray-50 { background-color: #2d3748; } /* Card background */
-        #oncozim-app .bg-white { background-color: #2d3748; } /* Card background */
-        #oncozim-app .text-gray-900 { color: #e2e8f0; } /* Light text */
-        #oncozim-app .text-gray-700 { color: #cbd5e1; } /* Slightly darker light text */
-        #oncozim-app .text-gray-300 { color: #cbd5e1; } /* Slightly darker light text */
-        #oncozim-app .text-gray-600 { color: #94a3b8; } /* Medium gray text */
-        #oncozim-app .text-gray-100 { color: #e2e8f0; } /* Light text */
-        #oncozim-app .dark\:bg-gray-900 { background-color: #1a202c; } /* Main dark background */
-        #oncozim-app .dark\:text-gray-100 { color: #e2e8f0; } /* Light text */
-        #oncozim-app .dark\:bg-gray-800 { background-color: #2d3748; } /* Card background */
-        #oncozim-app .dark\:text-gray-300 { color: #cbd5e1; } /* Slightly darker light text */
-        #oncozim-app .dark\:text-gray-400 { color: #94a3b8; } /* Medium gray text */
-        #oncozim-app .dark\:text-white { color: #e2e8f0; } /* Light text */
-
-        #oncozim-app .text-emerald-600 { color: #10b981; } /* Green accent */
-        #oncozim-app .dark\:text-emerald-400 { color: #34d399; } /* Lighter green accent for dark mode */
-        #oncozim-app .hover\:text-emerald-600:hover { color: #10b981; }
-        #oncozim-app .dark\:hover\:text-emerald-400:hover { color: #34d399; }
-
-        #oncozim-app .subtle-underline {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Light white for dark mode */
-        }
-        #oncozim-app .dark .subtle-underline {
-            border-bottom-color: rgba(255, 255, 255, 0.1); /* Consistent */
-        }
-
-        /* Quiz specific styles */
-        #oncozim-app .quiz-option {
-            background-color: #4a5568; /* Darker option background */
-            color: #e2e8f0;
-            border: 1px solid #6366f1; /* Primary color border */
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: background-color 0.2s, border-color 0.2s;
-        }
-        #oncozim-app .quiz-option:hover {
-            background-color: #6366f1;
-            border-color: #4f46e5;
-        }
-        #oncozim-app .quiz-option.selected {
-            background-color: #4f46e5;
-            border-color: #4f46e5;
-        }
-        #oncozim-app .quiz-option.correct {
-            background-color: #10b981; /* Green */
-            border-color: #059669;
-        }
-        #oncozim-app .quiz-option.incorrect {
-            background-color: #ef4444; /* Red */
-            border-color: #dc2626;
-        }
-        #oncozim-app .quiz-result-message.correct {
-            color: #34d399; /* Green */
-        }
-        #oncozim-app .quiz-result-message.incorrect {
-            color: #ef4444; /* Red */
-        }
-        #oncozim-app .quiz-result-message {
-            font-weight: bold;
-            margin-top: 1rem;
-        }
-        #oncozim-app #quiz-form button {
-            background-color: #6366f1;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            transition: background-color 0.2s ease-in-out;
-        }
-        #oncozim-app #quiz-form button:hover {
-            background-color: #4f46e5;
-        }
-        #oncozim-app #quiz-result button {
-            background-color: #6366f1;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            transition: background-color 0.2s ease-in-out;
-        }
-        #oncozim-app #quiz-result button:hover {
-            background-color: #4f46e5;
-        }
-        #oncozim-app .antialiased {
+        .antialiased {
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -237,10 +147,9 @@
             <!-- Navigation Links -->
             <div class="hidden md:flex md:flex-grow md:justify-center space-x-6">
                 <a href="#home" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Home</a>
-                <a href="#dual-passions" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Our Focus</a>
+                <a href="#our-focus" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Our Focus</a>
                 <a href="#bots" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Bots</a>
                 <a href="#projects" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Projects</a>
-                <a href="#oncozim-app" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Oncozim Research</a>
                 <a href="#about" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">About Us</a>
                 <a href="#contact" class="text-gray-300 hover:text-white transition duration-300 ease-in-out rounded-md px-3 py-2">Contact</a>
             </div>
@@ -258,10 +167,9 @@
         <!-- Mobile Menu (Hidden by default) -->
         <div id="mobile-menu" class="md:hidden bg-gray-800 py-2 hidden">
             <a href="#home" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Home</a>
-            <a href="#dual-passions" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Our Focus</a>
+            <a href="#our-focus" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Our Focus</a>
             <a href="#bots" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Bots</a>
             <a href="#projects" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Projects</a>
-            <a href="#oncozim-app" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Oncozim Research</a>
             <a href="#about" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">About Us</a>
             <a href="#contact" class="block px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md">Contact</a>
         </div>
@@ -281,27 +189,18 @@
         </div>
     </section>
 
-    <!-- Dual Passions Section -->
-    <section id="dual-passions" class="py-16 bg-gray-900">
+    <!-- Focus Section -->
+    <section id="our-focus" class="py-16 bg-gray-900">
         <div class="container text-center">
-            <h2 class="text-4xl font-bold mb-12 gradient-text">Our Dual Focus: Algorithmic Innovation Across Domains</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="card p-6 text-left">
+            <h2 class="text-4xl font-bold mb-12 gradient-text">Our Focus: Algorithmic Innovation</h2>
+            <div class="flex justify-center">
+                <div class="card p-6 text-left max-w-2xl">
                     <h3 class="text-3xl font-semibold mb-4 text-white">Quantitative Finance Algorithms</h3>
                     <p class="text-lg text-gray-300 leading-relaxed">
                         At TQuants, we apply rigorous <strong>mathematical and statistical models</strong> to financial markets. Our work involves developing and deploying <strong>high-frequency trading algorithms, arbitrage strategies, and predictive analytics</strong> for cryptocurrencies and traditional stocks. This domain demands precision, speed, and a deep understanding of market dynamics, leveraging <strong>complex data structures and real-time processing</strong> to identify and capitalize on market inefficiencies.
                     </p>
                 </div>
-                <div class="card p-6 text-left">
-                    <h3 class="text-3xl font-semibold mb-4 text-white">Radiation Oncology Algorithms</h3>
-                    <p class="text-lg text-gray-300 leading-relaxed">
-                        Through Oncozim by Takwirira, we channel quantitative expertise into healthcare. Here, algorithms are designed for <strong>medical image analysis, tumor detection, and radiation dose optimization</strong> in cancer treatment. This field requires a strong foundation in <strong>physics, advanced imaging techniques, and machine learning</strong> to improve diagnostic accuracy, personalize patient care, and enhance treatment efficacy, ultimately impacting patient outcomes.
-                    </p>
-                </div>
             </div>
-            <p class="text-xl text-gray-300 mt-12 max-w-3xl mx-auto text-left">
-                Both areas demonstrate a core capability in <strong>algorithmic problem-solving, data-driven decision-making, and the development of robust, high-performance systems</strong>, adaptable to diverse and challenging environments.
-            </p>
         </div>
     </section>
 
@@ -363,7 +262,7 @@
                     </ul>
                 </div>
 
-                <!-- Bot 3 Card (Placeholder for future bots or can be removed if only 2) -->
+                <!-- Bot 3 Card -->
                 <div class="card text-left">
                     <h3 class="text-2xl font-semibold mb-4 text-white">Volatility Scalper Bot</h3>
                     <p class="text-gray-400 mb-4">
@@ -448,115 +347,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Oncozim App Section -->
-    <section id="oncozim-app" class="py-16 bg-gray-800 antialiased">
-        <div class="container mx-auto p-4 sm:p-6 lg:p-8 flex-grow w-full">
-            <header class="bg-gray-900 dark:bg-gray-800 shadow-md py-4 px-6 flex flex-col items-center rounded-b-lg w-full">
-                <h1 class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400 mb-4 sm:mb-0 text-center">Oncozim by Takwirira</h1>
-            </header>
-
-            <section id="about-oncozim" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md mt-8">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-extrabold mb-6 text-gray-900 dark:text-white text-center">Advancing Health with Intelligent Algorithms</h2>
-                    <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300 text-left">
-                        <span class="subtle-underline">Oncozim by Takwirira</span> is a health technology initiative focused on advancing cancer care and medical research in Zimbabwe through <strong>rigorous quantitative methods</strong> and <strong>intelligent automation</strong>. We develop advanced, automated AI systems that help clinicians detect and measure tumors from radiological imaging with <strong>unparalleled speed and precision</strong>. Our <strong>open and transparent pipelines</strong>, built on robust data science principles, accelerate diagnostics and support impactful research for better patient outcomes.
-                    </p>
-                    <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300 text-left">
-                        Founded by <strong>Khumbula (Takwirira, Barachel)</strong>, a Zimbabwean PhD candidate in Physics at the University of New Hampshire (starting Fall 2025), Oncozim is driven by a personal commitment to expanding access to quality cancer care. With a background rooted in <strong>complex problem-solving and data analysis</strong>, Takwirira understands the critical need for <strong>scalable, data-driven solutions</strong> in healthcare. This initiative leverages <strong>advanced statistical modeling and machine learning algorithms</strong> to transform care through innovation and capacity building.
-                    </p>
-                    <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300 text-left">
-                        Our vision is to forge lasting partnerships with hospitals and research institutions across Zimbabwe, using <strong>cutting-edge technology and quantitative expertise</strong> to transform oncology and empower local healthcare systems.
-                    </p>
-                </div>
-            </section>
-
-            <section id="services-oncozim" class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 rounded-lg shadow-md mt-8">
-                <div class="max-w-6xl mx-auto">
-                    <h2 class="text-4xl font-extrabold mb-8 text-gray-900 dark:text-white text-center">Our Services</h2>
-
-                    <div class="max-w-4xl mx-auto space-y-10 text-left">
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">AI-Powered Tumor Detection & Quantification</h3>
-                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Instant analysis of medical scan images (DICOM) to assess cancer risk and <strong>quantify tumor progression</strong> using advanced, expertly trained AI models. This enables earlier and more accurate diagnoses, providing <strong>actionable data points for clinical decision-making</strong>.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Clinical Research Pipeline Tools</h3>
-                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                <strong>Command-line tools and robust APIs</strong> empower clinical researchers to efficiently process and <strong>analyze large imaging and patient datasets at scale</strong>. This fosters local research, enabling <strong>data-driven insights</strong> and contributions to global medical knowledge.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Data Integration & Interoperability</h3>
-                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                Robust support for <strong>structured CSV metadata</strong>, clinical tagging, and <strong>export-ready research formats</strong>. Our solutions seamlessly integrate with existing hospital systems, enhancing healthcare workflows and ensuring <strong>data consistency and accessibility</strong> in Zimbabwe.
-                            </p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-2xl font-bold mb-3 text-gray-900 dark:text-white">Quantitative Health Education</h3>
-                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                                <span class="subtle-underline">Empowering</span> communities through knowledge. Interactive quizzes present essential oncology facts with 10 new shuffled questions weekly. We aim to translate this content into local languages to reach all of Zimbabwe, fostering <strong>data literacy and informed health decisions</strong>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-
-            <section id="continuous-improvement-oncozim" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md mt-8">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-extrabold mb-6 text-gray-900 dark:text-white text-center">Advancements & Quantitative Research</h2>
-                    <p class="text-lg leading-relaxed mx-auto text-gray-700 dark:text-gray-300 text-left">At Oncozim by Takwirira, our mission centers on <strong>precision and quantitative rigor</strong> in cancer detection and treatment. We are constantly working to bring <span class="subtle-underline">cutting-edge</span> advancements to cancer care through intelligent, automated systems that empower clinicians to detect and <strong>quantify tumors from radiological imaging with unparalleled precision and ease</strong>. <strong>Our research and development efforts are strategically aligned with the specific health challenges and opportunities present in Zimbabwe, ensuring our solutions are relevant and impactful for our nation's healthcare future, driven by robust data analysis and algorithmic development.</strong></p>
-                </div>
-            </section>
-
-            <section id="certifications-oncozim" class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 rounded-lg shadow-md mt-8">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-extrabold mb-8 text-gray-900 dark:text-white text-center">Certifications & Ethical Data Practices</h2>
-                    <ul class="space-y-4 text-left text-gray-700 dark:text-gray-300">
-                        <li class="text-lg text-left">Fully compliant with <strong>HIPAA</strong> data handling protocols to ensure patient data privacy and security, providing a robust framework for ethical data management <strong>in Zimbabwe and globally</strong>. This demonstrates a strong understanding of <strong>regulatory compliance and data governance</strong>, crucial for any data-intensive role.</li>
-                        <li class="text-lg text-left">Model validation on ethically sourced, anonymized datasets to maintain <span class="subtle-underline">integrity</span> and prevent bias, ensuring our AI models are fair and effective for diverse populations, including those <strong>in Zimbabwe</strong>. This highlights expertise in <strong>data validation, bias detection, and ethical AI development</strong>.</li>
-                        <li class="text-lg text-left">Strict adherence to <strong>IRB</strong> (Institutional Review Board) and institutional ethics review processes for all research and development, upholding the highest standards of ethical practice in all our endeavors, reflecting <strong>rigorous research methodology and accountability</strong>.</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="quiz-oncozim" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800 rounded-lg shadow-md mt-8">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-4xl font-extrabold mb-6 text-gray-900 dark:text-white text-center">Medical Physics ABR Exam Prep Quiz</h2>
-                    <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300 text-left">
-                        Prepare for the American Board of Radiology (ABR) certification exams in Medical Physics with our targeted quiz. These questions are designed to test your understanding of the core physics principles in diagnostic imaging, nuclear medicine, and radiation therapy.
-                    </p>
-                    <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300 text-left">
-                        Each session presents 10 shuffled questions covering key ABR topics. After each answer, you'll receive an immediate, AI-generated explanation to solidify your knowledge.
-                    </p>
-                    <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300 text-left">
-                        <strong>Take our quiz</strong> to sharpen your skills and build confidence for your board exams.
-                    </p>
-                    <button id="start-quiz-btn" class="mt-8 px-8 py-4 bg-emerald-600 text-white font-bold rounded-full shadow-lg hover:bg-emerald-700 transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-emerald-300">Start ABR Prep Quiz</button>
-                    <div id="quiz-form" class="mt-4 hidden"></div>
-                    <div id="quiz-result" class="mt-4 hidden"></div>
-                    <div id="highest-score-display" class="mt-4 text-gray-300"></div>
-                </div>
-            </section>
-
-            <!-- Contact Section - Placeholder for now -->
-            <section id="contact-oncozim" class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 rounded-lg shadow-md mt-8">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-4xl font-extrabold mb-6 text-gray-900 dark:text-white">Contact Us</h2>
-                    <p class="text-lg leading-relaxed mb-4 text-gray-700 dark:text-gray-300 text-left">We are eager to connect with healthcare institutions, researchers, and partners who share our vision for advancing healthcare and radiation oncology research in Zimbabwe. Please reach out to discuss collaboration opportunities.</p>
-                    <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 text-left">Email: <a href="mailto:research@takwiriraquants.com" class="text-emerald-600 dark:text-emerald-400 hover:underline">research@takwiriraquants.com</a></p>
-                    <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300 text-left">Phone: <a href="tel:+263788643858" class="text-emerald-600 dark:text-emerald-400 hover:underline">+263 788643858 (Zimbabwe, WhatsApp Only)</a></p>
-                </div>
-            </section>
-
         </div>
     </section>
 
@@ -690,260 +480,6 @@
 
             modal.style.display = 'flex'; // Use flex to center content
         };
-
-
-        // --- Oncozim App JavaScript ---
-
-        // Quiz Data: ABR Medical Physics Style Questions
-        const allQuizData = [
-            { question: "In a 6 MV linear accelerator, what is the primary interaction mechanism for photons in the flattening filter?", options: ["Photoelectric Effect", "Compton Scattering", "Pair Production", "Rayleigh Scattering"], answer: 1 },
-            { question: "According to TG-51 protocol, what is the value of k_Q for a 6 MV photon beam when using an Exradin A12 farmer chamber?", options: ["It is always 1.0", "It must be measured for each beam", "It is obtained from a table based on %dd(10)x", "It depends on the room temperature and pressure"], answer: 2 },
-            { question: "What is the primary purpose of the Hounsfield Unit (HU) scale in CT imaging?", options: ["To measure the X-ray tube current (mA)", "To quantify the radiodensity of tissues relative to water", "To determine the slice thickness", "To calculate the patient's radiation dose"], answer: 1 },
-            { question: "In MRI, T2* decay is faster than T2 decay primarily due to:", options: ["Spin-lattice interactions", "Higher magnetic field strength", "Inhomogeneities in the main magnetic field (B0)", "The use of gadolinium contrast"], answer: 2 },
-            { question: "For a 10x10 cm photon beam at 100 cm SSD, the PDD at 10 cm depth is 67.1%. What is the approximate Tissue-Air Ratio (TAR) at the same depth?", options: ["0.55", "0.67", "0.75", "Cannot be determined from PDD"], answer: 2 },
-            { question: "The threshold energy for pair production in the field of a nucleus is:", options: ["0.511 MeV", "1.022 MeV", "2.044 MeV", "There is no threshold"], answer: 1 },
-            { question: "What is the function of a bowtie filter in a CT scanner?", options: ["To improve image contrast", "To reduce beam hardening artifacts and patient dose", "To increase the spatial resolution", "To filter out low-energy x-rays"], answer: 1 },
-            { question: "In PET imaging, the two annihilation photons are detected in coincidence. What is their energy and angular separation?", options: ["511 keV, 90 degrees", "1.022 MeV, 180 degrees", "511 keV, 180 degrees", "1.022 MeV, 90 degrees"], answer: 2 },
-            { question: "The annual occupational dose limit for the whole body, according to the NRC, is:", options: ["5 mSv", "50 mSv", "150 mSv", "500 mSv"], answer: 1 },
-            { question: "What is the primary advantage of Intensity-Modulated Radiation Therapy (IMRT) over 3D Conformal Radiation Therapy (3D-CRT)?", options: ["Shorter treatment times", "Lower machine cost", "Ability to create highly conformal dose distributions with steep dose gradients", "Uses non-ionizing radiation"], answer: 2 },
-            { question: "In X-ray production, 'bremsstrahlung' radiation results from:", options: ["Electron-electron interactions", "The deceleration of electrons by the atomic nucleus of the target material", "Photoelectric absorption in the target", "Characteristic X-ray emission"], answer: 1 },
-            { question: "What does the term 'KERMA' stand for?", options: ["Kinetic Energy Released per unit MAss", "Kinetic Energy Radiated in Matter", "Kiloelectronvolt Energy Released in Material", "Kinetic Electron Radiation Measurement"], answer: 0 },
-            { question: "In brachytherapy, the dose rate constant (Λ) for an I-125 source is approximately:", options: ["0.1 cGy/h/U", "1.0 cGy/h/U", "10 cGy/h/U", "100 cGy/h/U"], answer: 1 },
-            { question: "Which quality assurance (QA) test is performed daily on a linear accelerator?", options: ["Beam flatness and symmetry", "Output constancy (photon and electron)", "Light/radiation field coincidence", "Emergency stop functionality"], answer: 1 },
-            { question: "The half-life of Technetium-99m (Tc-99m), commonly used in nuclear medicine, is approximately:", options: ["6 minutes", "6 hours", "6 days", "60 days"], answer: 1 },
-            { question: "What is the primary determinant of contrast in an unenhanced CT image?", options: ["Electron density", "Atomic number (Z)", "Physical density (g/cm³)", "All of the above"], answer: 3 },
-            { question: "For electron beam therapy, the practical range (Rp) in cm in water is approximately related to the beam energy (E0) in MeV by:", options: ["Rp ≈ E0 / 2", "Rp ≈ E0 * 2", "Rp ≈ E0 / 3", "Rp ≈ E0 * 3"], answer: 0 },
-            { question: "A 'klystron' or 'magnetron' in a linear accelerator is used to:", options: ["Generate the high-energy electron beam", "Focus the electron beam onto the target", "Generate high-power microwaves to accelerate electrons", "Steer the photon beam towards the patient"], answer: 2 },
-            { question: "The 'build-up' region in photon beam dosimetry refers to the depth where:", options: ["Dose decreases rapidly", "Kerma is at its maximum", "The dose increases from the surface to the depth of maximum dose (d_max)", "Electronic equilibrium is first lost"], answer: 2 },
-            { question: "Which radioisotope is commonly used for High-Dose-Rate (HDR) brachytherapy?", options: ["Iodine-125", "Palladium-103", "Iridium-192", "Cesium-137"], answer: 2 }
-        ];
-
-        let currentQuizQuestions = [];
-        let currentQuestionIndex = 0;
-        let currentScore = 0;
-        const NUM_QUIZ_QUESTIONS = 10;
-        let quizResultsSummary = []; // To store results for final display
-
-        const quizFormDiv = document.getElementById('quiz-form');
-        const quizResultDiv = document.getElementById('quiz-result');
-        const startQuizBtn = document.getElementById('start-quiz-btn');
-        const highestScoreDisplay = document.getElementById('highest-score-display');
-
-        // Function to shuffle an array
-        function shuffleArray(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-        }
-
-        // Function to load and display highest score
-        function loadHighestScore() {
-            const highestScore = localStorage.getItem('oncozimHighestScore') || 0;
-            highestScoreDisplay.textContent = `Your Highest Score: ${highestScore}/${NUM_QUIZ_QUESTIONS}`;
-        }
-
-        // Function to save highest score
-        function saveHighestScore(score) {
-            const currentHighest = localStorage.getItem('oncozimHighestScore') || 0;
-            if (score > currentHighest) {
-                localStorage.setItem('oncozimHighestScore', score);
-                loadHighestScore(); // Update display immediately
-            }
-        }
-
-        // Function to display current question
-        function displayQuestion() {
-            quizResultDiv.innerHTML = ''; // Clear previous result
-            if (currentQuestionIndex < NUM_QUIZ_QUESTIONS) {
-                const questionData = currentQuizQuestions[currentQuestionIndex];
-                let questionHtml = `
-                    <p class="text-xl font-semibold mb-4 text-gray-100">${currentQuestionIndex + 1}. ${questionData.question}</p>
-                    <div class="space-y-3">
-                `;
-                questionData.options.forEach((option, index) => {
-                    questionHtml += `
-                        <div class="quiz-option p-3 rounded-md cursor-pointer" data-index="${index}">
-                            ${option}
-                        </div>
-                    `;
-                });
-                questionHtml += `</div>
-                    <button id="submit-answer-btn" class="btn-primary mt-6 w-full">Submit Answer</button>
-                    <div id="explanation-area" class="mt-4 p-4 bg-gray-700 rounded-md hidden">
-                        <p class="font-semibold text-gray-200 text-lg mb-2 text-left">Explanation:</p>
-                        <div id="explanation-text" class="text-gray-300 text-left"></div>
-                        <button id="next-question-btn" class="btn-primary mt-4 hidden">Next Question</button>
-                    </div>
-                `;
-                quizFormDiv.innerHTML = questionHtml;
-
-                // Add event listeners for options
-                document.querySelectorAll('.quiz-option').forEach(optionDiv => {
-                    optionDiv.addEventListener('click', () => {
-                        document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
-                        optionDiv.classList.add('selected');
-                    });
-                });
-
-                // Add event listener for submit button
-                document.getElementById('submit-answer-btn').addEventListener('click', checkAnswer);
-
-            } else {
-                // Quiz finished - display summary
-                quizFormDiv.innerHTML = '';
-                quizFormDiv.classList.add('hidden');
-                let finalSummaryHtml = `
-                    <p class="text-2xl font-bold text-center text-gray-100 mb-4">Quiz Completed!</p>
-                    <p class="text-xl text-center text-gray-300 mb-8">You scored ${currentScore} out of ${NUM_QUIZ_QUESTIONS}.</p>
-                    <div class="space-y-6">
-                `;
-
-                quizResultsSummary.forEach((result, idx) => {
-                    finalSummaryHtml += `
-                        <div class="card p-4 text-left">
-                            <p class="font-semibold text-gray-100">Question ${idx + 1}: ${result.question}</p>
-                            <p class="text-gray-300">Your Answer: ${result.userAnswer} ${result.isCorrect ? '<span class="text-green-400">(Correct)</span>' : '<span class="text-red-400">(Incorrect)</span>'}</p>
-                            <p class="text-gray-300">Correct Answer: ${result.correctAnswer}</p>
-                            <div class="text-gray-400 mt-2 text-left"><strong>Explanation:</strong> ${result.explanation}</div>
-                        </div>
-                    `;
-                });
-                finalSummaryHtml += `</div>
-                    <div class="flex justify-center mt-8">
-                        <button id="restart-quiz-btn" class="btn-primary">Restart Quiz</button>
-                    </div>
-                `;
-                quizResultDiv.innerHTML = finalSummaryHtml;
-                quizResultDiv.classList.remove('hidden');
-                saveHighestScore(currentScore);
-                document.getElementById('restart-quiz-btn').addEventListener('click', startQuiz);
-            }
-        }
-
-        // Function to check the selected answer
-        async function checkAnswer() {
-            const selectedOption = document.querySelector('.quiz-option.selected');
-            if (!selectedOption) {
-                showModal("Please select an answer before submitting.", 'alert');
-                return;
-            }
-
-            const questionData = currentQuizQuestions[currentQuestionIndex];
-            const selectedAnswerIndex = parseInt(selectedOption.dataset.index);
-            const correctAnswerIndex = questionData.answer;
-
-            const userAnswerText = selectedOption.textContent.trim();
-            const correctAnswerText = questionData.options[correctAnswerIndex].trim();
-            const isCorrect = (selectedAnswerIndex === correctAnswerIndex);
-
-            // Disable all options and submit button after selection
-            document.querySelectorAll('.quiz-option').forEach(optionDiv => {
-                optionDiv.style.pointerEvents = 'none';
-            });
-            document.getElementById('submit-answer-btn').style.display = 'none';
-
-            if (isCorrect) {
-                currentScore++;
-                selectedOption.classList.add('correct');
-            } else {
-                selectedOption.classList.add('incorrect');
-                document.querySelector(`.quiz-option[data-index="${correctAnswerIndex}"]`).classList.add('correct');
-            }
-
-            // Display loading message for explanation
-            const explanationArea = document.getElementById('explanation-area');
-            const explanationText = document.getElementById('explanation-text');
-            explanationText.innerHTML = "Generating AI explanation...";
-            explanationArea.classList.remove('hidden');
-
-            let explanation = "No explanation available.";
-            const MAX_RETRIES = 3;
-            let retries = 0;
-            let delay = 1000; // 1 second initial delay
-
-            while (retries < MAX_RETRIES) {
-                try {
-                    const prompt = `Provide a very direct, one-sentence explanation for the following medical physics ABR exam question. Focus only on the core reason for the correct answer. Use HTML tags for formatting: <strong> for key terms.
-                    Question: "${questionData.question}"
-                    Correct Answer: "${correctAnswerText}"`;
-
-                    let chatHistory = [];
-                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                    const payload = { contents: chatHistory };
-                    const apiKey = ""; // API key will be injected by the environment.
-
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`API request failed with status ${response.status}`);
-                    }
-
-                    const result = await response.json();
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        explanation = result.candidates[0].content.parts[0].text;
-                        break; // Exit loop on success
-                    } else {
-                        throw new Error("Unexpected API response structure or no content.");
-                    }
-                } catch (error) {
-                    retries++;
-                    console.error(`Attempt ${retries} failed to fetch explanation:`, error);
-                    if (retries < MAX_RETRIES) {
-                        await new Promise(resolve => setTimeout(resolve, delay));
-                        delay *= 2; // Exponential backoff
-                    } else {
-                        explanation = `This functionality has been intentionally paused by QTuants as we are still securing our platform. The correct answer is: <strong>${correctAnswerText}</strong>.`;
-                    }
-                }
-            }
-
-            explanationText.innerHTML = explanation; // Use innerHTML to render HTML
-
-            quizResultsSummary.push({
-                question: questionData.question,
-                userAnswer: userAnswerText,
-                correctAnswer: correctAnswerText,
-                isCorrect: isCorrect,
-                explanation: explanation
-            });
-
-            const nextQuestionBtn = document.getElementById('next-question-btn');
-            nextQuestionBtn.classList.remove('hidden');
-            nextQuestionBtn.addEventListener('click', () => {
-                currentQuestionIndex++;
-                displayQuestion();
-            });
-        }
-
-        // Function to start the quiz
-        function startQuiz() {
-            currentQuizQuestions = shuffleArray([...allQuizData]).slice(0, NUM_QUIZ_QUESTIONS);
-            currentQuestionIndex = 0;
-            currentScore = 0;
-            quizResultsSummary = []; // Reset summary for new quiz
-            quizFormDiv.classList.remove('hidden');
-            quizResultDiv.innerHTML = '';
-            quizResultDiv.classList.add('hidden');
-            startQuizBtn.classList.add('hidden');
-            displayQuestion();
-        }
-
-        // Event listener for Start Quiz button
-        startQuizBtn.addEventListener('click', startQuiz);
-
-        // Load highest score on page load
-        loadHighestScore();
-
     </script>
 </body>
 </html>
