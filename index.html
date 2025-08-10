@@ -902,7 +902,7 @@
                         await new Promise(resolve => setTimeout(resolve, delay));
                         delay *= 2; // Exponential backoff
                     } else {
-                        explanation = `This functionality has been intemtionally paused by QTuants as we are still securing our platform. The correct answer is <strong>${correctAnswerText}</strong>.`;
+                        explanation = `This functionality has been intemtionally paused by QTuants as we are still securing our platform. The correct answer is: <strong>${correctAnswerText}</strong>.`;
                     }
                 }
             }
