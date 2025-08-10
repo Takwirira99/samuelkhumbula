@@ -534,20 +534,7 @@
                 </div>
             </section>
 
-            <!-- Internet Search Section -->
-            <section id="internet-search" class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 rounded-lg shadow-md mt-8">
-                <div class="max-w-4xl mx-auto text-center">
-                    <h2 class="text-4xl font-extrabold mb-6 text-gray-900 dark:text-white">Search the Internet</h2>
-                    <p class="text-lg leading-relaxed mb-6 text-gray-700 dark:text-gray-300">
-                        Need to quickly look up something related to quantitative finance, medical physics, or anything else? Use the search bar below to query the web directly.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                        <input type="text" id="internet-search-input" placeholder="Enter your search query..." class="w-full sm:w-2/3 p-3 rounded-md bg-gray-700 text-white border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <button id="internet-search-button" class="btn-primary w-full sm:w-auto">Search</button>
-                    </div>
-                </div>
-            </section>
-
+           
 
             <!-- Contact Section - Placeholder for now -->
             <section id="contact-oncozim" class="py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 rounded-lg shadow-md mt-8">
@@ -1002,32 +989,6 @@
 
         // Load highest score on page load
         loadHighestScore();
-
-        // --- Internet Search Functionality ---
-        const internetSearchInput = document.getElementById('internet-search-input');
-        const internetSearchButton = document.getElementById('internet-search-button');
-
-        function performInternetSearch() {
-            const query = internetSearchInput.value.trim();
-            if (query) {
-                // Encode the query for URL
-                const encodedQuery = encodeURIComponent(query);
-                // Open Google search in a new tab
-                window.open(`https://www.google.com/search?q=${encodedQuery}`, '_blank');
-            } else {
-                showModal("Please enter a search query.", 'alert');
-            }
-        }
-
-        // Event listener for the search button
-        internetSearchButton.addEventListener('click', performInternetSearch);
-
-        // Allow pressing Enter key to search
-        internetSearchInput.addEventListener('keypress', (event) => {
-            if (event.key === 'Enter') {
-                performInternetSearch();
-            }
-        });
 
     </script>
 </body>
